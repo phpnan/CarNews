@@ -49,8 +49,6 @@
     UIViewController * myspaceController = [[GPMySpaceViewController alloc]init];
     [self addChildController:myspaceController withTitle:@"我的" withImageName:@"tab_mySpace_normal" andSelectImage:@"tab_mySpace_highlighted"];
     
-    
-    
 }
 
 /**

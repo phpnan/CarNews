@@ -26,6 +26,9 @@
 		57A080781B12BEA3006DE5AB /* GPArrowItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 57A080771B12BEA3006DE5AB /* GPArrowItem.m */; };
 		57A0807C1B12C10B006DE5AB /* GPMyFavoController.m in Sources */ = {isa = PBXBuildFile; fileRef = 57A0807B1B12C10B006DE5AB /* GPMyFavoController.m */; };
 		57A0807F1B12C74A006DE5AB /* GPBaseSettingController.m in Sources */ = {isa = PBXBuildFile; fileRef = 57A0807E1B12C74A006DE5AB /* GPBaseSettingController.m */; };
+		57A080831B12CA2E006DE5AB /* GPSpaceHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 57A080821B12CA2E006DE5AB /* GPSpaceHeaderView.m */; };
+		57A080851B12CA4D006DE5AB /* GPSpaceHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 57A080841B12CA4D006DE5AB /* GPSpaceHeaderView.xib */; };
+		57A080881B12D02D006DE5AB /* GPSettingController.m in Sources */ = {isa = PBXBuildFile; fileRef = 57A080871B12D02D006DE5AB /* GPSettingController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -78,6 +81,11 @@
 		57A0807B1B12C10B006DE5AB /* GPMyFavoController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GPMyFavoController.m; sourceTree = "<group>"; };
 		57A0807D1B12C74A006DE5AB /* GPBaseSettingController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GPBaseSettingController.h; sourceTree = "<group>"; };
 		57A0807E1B12C74A006DE5AB /* GPBaseSettingController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GPBaseSettingController.m; sourceTree = "<group>"; };
+		57A080811B12CA2E006DE5AB /* GPSpaceHeaderView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GPSpaceHeaderView.h; sourceTree = "<group>"; };
+		57A080821B12CA2E006DE5AB /* GPSpaceHeaderView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GPSpaceHeaderView.m; sourceTree = "<group>"; };
+		57A080841B12CA4D006DE5AB /* GPSpaceHeaderView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = GPSpaceHeaderView.xib; sourceTree = "<group>"; };
+		57A080861B12D02D006DE5AB /* GPSettingController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GPSettingController.h; sourceTree = "<group>"; };
+		57A080871B12D02D006DE5AB /* GPSettingController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GPSettingController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -236,6 +244,8 @@
 				57A080511B12A88B006DE5AB /* GPMySpaceViewController.m */,
 				57A0807D1B12C74A006DE5AB /* GPBaseSettingController.h */,
 				57A0807E1B12C74A006DE5AB /* GPBaseSettingController.m */,
+				57A080861B12D02D006DE5AB /* GPSettingController.h */,
+				57A080871B12D02D006DE5AB /* GPSettingController.m */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -245,6 +255,9 @@
 			children = (
 				57A0806C1B12AE9A006DE5AB /* GPSettingCell.h */,
 				57A0806D1B12AE9A006DE5AB /* GPSettingCell.m */,
+				57A080811B12CA2E006DE5AB /* GPSpaceHeaderView.h */,
+				57A080821B12CA2E006DE5AB /* GPSpaceHeaderView.m */,
+				57A080841B12CA4D006DE5AB /* GPSpaceHeaderView.xib */,
 			);
 			name = Views;
 			sourceTree = "<group>";
@@ -353,6 +366,7 @@
 			files = (
 				57A080351B12A7E7006DE5AB /* LaunchScreen.xib in Resources */,
 				57A080321B12A7E7006DE5AB /* Images.xcassets in Resources */,
+				57A080851B12CA4D006DE5AB /* GPSpaceHeaderView.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -373,7 +387,9 @@
 				57A0805F1B12A88B006DE5AB /* GPPreferentialViewController.m in Sources */,
 				57A0805C1B12A88B006DE5AB /* GPForumViewController.m in Sources */,
 				57A080721B12B0A0006DE5AB /* GPSettingItem.m in Sources */,
+				57A080831B12CA2E006DE5AB /* GPSpaceHeaderView.m in Sources */,
 				57A080781B12BEA3006DE5AB /* GPArrowItem.m in Sources */,
+				57A080881B12D02D006DE5AB /* GPSettingController.m in Sources */,
 				57A080301B12A7E7006DE5AB /* AppDelegate.m in Sources */,
 				57A0806E1B12AE9A006DE5AB /* GPSettingCell.m in Sources */,
 				57A0805D1B12A88B006DE5AB /* GPMySpaceViewController.m in Sources */,

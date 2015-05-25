@@ -12,19 +12,52 @@
 #import "GPSettingCell.h"
 #import "GPMyFavoController.h"
 #import "GPArrowItem.h"
+#import "GPSpaceHeaderView.h"
+#import "GPSettingController.h"
 @interface GPMySpaceViewController ()
 
 @end
 
 @implementation GPMySpaceViewController
 
+- (instancetype)init
+{
+    return [super initWithStyle:UITableViewStylePlain];
+}
+
+- (instancetype)initWithStyle:(UITableViewStyle)style
+{
+    if(self = [super initWithStyle:style])
+    {
+        
+    }
+    return self;
+}
+
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     /**
-     *  添加一个headerView
+     *  添加头部
      */
-   // self.tableView.tableHeaderView = [UIButton buttonWithType:UIButtonTypeContactAdd];
+    self.tableView.tableHeaderView = [GPSpaceHeaderView spaceHeaderView];
+    /**
+     *  让分割线消失
+     */
+    self.tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
+    
+    self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc]initWithImage:[UIImage imageNamed:@"setting"] style:UIBarButtonItemStylePlain target:self action:@selector(settingTouch)];
+    
+ 
     [self addGroup];
+}
+
+- (void)settingTouch
+{
+    GPSettingController * settingController = [[GPSettingController alloc]init];
+    settingController.title = @"更多";
+//    settingController.navigationItem.leftBarButtonItem.title = nil;
+    [self.navigationController showViewController:settingController sender:nil];
 }
 
 - (void)addGroup
