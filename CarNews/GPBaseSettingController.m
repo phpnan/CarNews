@@ -104,13 +104,15 @@
         
         GPArrowItem * arrowItem = (GPArrowItem*)item;
         /**
-         *  存在下一个控制器才跳转
+         *  存在下一个控制器才跳转,也是在这里给下一个控制器穿这个模型的数据
          */
         if(arrowItem.vcTargetClass)
         {
             UIViewController * controller = [[arrowItem.vcTargetClass alloc]init];
             
             controller.title = arrowItem.title;
+            
+            
             
             controller.view.backgroundColor = [UIColor whiteColor];
             

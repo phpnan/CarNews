@@ -8,6 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface GPNewsViewController : UIViewController
+@interface GPNewsViewController : UITableViewController
 
 @end

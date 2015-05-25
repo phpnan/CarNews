@@ -8,6 +8,7 @@
 
 #import "GPSettingController.h"
 #import "GPSettingGroup.h"
+#import "GPSwitchCityController.h"
 #import "GPSettingItem.h"
 #import "GPArrowItem.h"
 #import "MBProgressHUD+NJ.h"
@@ -51,9 +52,13 @@
     
 #warning 这里要设置下一步跳转的控制器以及一些block的操作
     
+    /**
+     城市选择的设置
+     */
     GPSettingGroup * group = [[GPSettingGroup alloc]init];
     GPSettingItem * switchCity =
-    [GPArrowItem settingItemWithIcon:nil andTitle:@"切换城市"];
+    
+    [GPArrowItem settingItemWithIcon:nil andTitle:@"切换城市" anddetailTitle:@"北京" andVcTargetClass:[GPSwitchCityController class]];
     
     GPSettingItem * checkUpdate = [GPArrowItem settingItemWithIcon:nil andTitle:@"检查新版本"  anddetailTitle:@"当前版本Beta4.3.2" andVcTargetClass:nil];
     
@@ -65,7 +70,6 @@
             [MBProgressHUD showSuccess:@"当前版本是最新版本"];
         });
     };
-    
     
     GPSettingItem * removeCache = [GPSettingItem settingItemWithIcon:nil andTitle:@"清除缓存" anddetailTitle:@"0.00M"];
     removeCache.option = ^{

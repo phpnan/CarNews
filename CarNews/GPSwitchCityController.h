@@ -8,6 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface GPSwitchCityController : UIViewController
+@interface GPSwitchCityController : UITableViewController
 
 @end
