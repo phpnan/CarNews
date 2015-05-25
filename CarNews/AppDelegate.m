@@ -7,7 +7,7 @@
 //
 
 #import "AppDelegate.h"
-
+#import "GPBaseTabController.h"
 @interface AppDelegate ()
 
 @end
@@ -16,7 +16,10 @@
 
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-    // Override point for customization after application launch.
+    self.window = [[UIWindow alloc]initWithFrame:[UIScreen mainScreen].bounds];
+    GPBaseTabController * baseTabController = [[GPBaseTabController alloc]init];
+    self.window.rootViewController = baseTabController;
+    [self.window makeKeyAndVisible];
     return YES;
 }
 

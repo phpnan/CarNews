@@ -12,6 +12,20 @@
 		57A080321B12A7E7006DE5AB /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 57A080311B12A7E7006DE5AB /* Images.xcassets */; };
 		57A080351B12A7E7006DE5AB /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 57A080331B12A7E7006DE5AB /* LaunchScreen.xib */; };
 		57A080411B12A7E7006DE5AB /* CarNewsTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 57A080401B12A7E7006DE5AB /* CarNewsTests.m */; };
+		57A0805A1B12A88B006DE5AB /* GPBaseNaviController.m in Sources */ = {isa = PBXBuildFile; fileRef = 57A0804B1B12A88B006DE5AB /* GPBaseNaviController.m */; };
+		57A0805B1B12A88B006DE5AB /* GPBaseTabController.m in Sources */ = {isa = PBXBuildFile; fileRef = 57A0804D1B12A88B006DE5AB /* GPBaseTabController.m */; };
+		57A0805C1B12A88B006DE5AB /* GPForumViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 57A0804F1B12A88B006DE5AB /* GPForumViewController.m */; };
+		57A0805D1B12A88B006DE5AB /* GPMySpaceViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 57A080511B12A88B006DE5AB /* GPMySpaceViewController.m */; };
+		57A0805E1B12A88B006DE5AB /* GPNewsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 57A080531B12A88B006DE5AB /* GPNewsViewController.m */; };
+		57A0805F1B12A88B006DE5AB /* GPPreferentialViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 57A080551B12A88B006DE5AB /* GPPreferentialViewController.m */; };
+		57A080601B12A88B006DE5AB /* GPSelectCarViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 57A080571B12A88B006DE5AB /* GPSelectCarViewController.m */; };
+		57A080611B12A88B006DE5AB /* UIImage+GPImageRendering.m in Sources */ = {isa = PBXBuildFile; fileRef = 57A080591B12A88B006DE5AB /* UIImage+GPImageRendering.m */; };
+		57A0806E1B12AE9A006DE5AB /* GPSettingCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 57A0806D1B12AE9A006DE5AB /* GPSettingCell.m */; };
+		57A080721B12B0A0006DE5AB /* GPSettingItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 57A080711B12B0A0006DE5AB /* GPSettingItem.m */; };
+		57A080751B12B7E4006DE5AB /* GPSettingGroup.m in Sources */ = {isa = PBXBuildFile; fileRef = 57A080741B12B7E4006DE5AB /* GPSettingGroup.m */; };
+		57A080781B12BEA3006DE5AB /* GPArrowItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 57A080771B12BEA3006DE5AB /* GPArrowItem.m */; };
+		57A0807C1B12C10B006DE5AB /* GPMyFavoController.m in Sources */ = {isa = PBXBuildFile; fileRef = 57A0807B1B12C10B006DE5AB /* GPMyFavoController.m */; };
+		57A0807F1B12C74A006DE5AB /* GPBaseSettingController.m in Sources */ = {isa = PBXBuildFile; fileRef = 57A0807E1B12C74A006DE5AB /* GPBaseSettingController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -35,6 +49,35 @@
 		57A0803A1B12A7E7006DE5AB /* CarNewsTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CarNewsTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		57A0803F1B12A7E7006DE5AB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		57A080401B12A7E7006DE5AB /* CarNewsTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CarNewsTests.m; sourceTree = "<group>"; };
+		57A0804A1B12A88B006DE5AB /* GPBaseNaviController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GPBaseNaviController.h; sourceTree = "<group>"; };
+		57A0804B1B12A88B006DE5AB /* GPBaseNaviController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GPBaseNaviController.m; sourceTree = "<group>"; };
+		57A0804C1B12A88B006DE5AB /* GPBaseTabController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GPBaseTabController.h; sourceTree = "<group>"; };
+		57A0804D1B12A88B006DE5AB /* GPBaseTabController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GPBaseTabController.m; sourceTree = "<group>"; };
+		57A0804E1B12A88B006DE5AB /* GPForumViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GPForumViewController.h; sourceTree = "<group>"; };
+		57A0804F1B12A88B006DE5AB /* GPForumViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GPForumViewController.m; sourceTree = "<group>"; };
+		57A080501B12A88B006DE5AB /* GPMySpaceViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GPMySpaceViewController.h; sourceTree = "<group>"; };
+		57A080511B12A88B006DE5AB /* GPMySpaceViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GPMySpaceViewController.m; sourceTree = "<group>"; };
+		57A080521B12A88B006DE5AB /* GPNewsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GPNewsViewController.h; sourceTree = "<group>"; };
+		57A080531B12A88B006DE5AB /* GPNewsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GPNewsViewController.m; sourceTree = "<group>"; };
+		57A080541B12A88B006DE5AB /* GPPreferentialViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GPPreferentialViewController.h; sourceTree = "<group>"; };
+		57A080551B12A88B006DE5AB /* GPPreferentialViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GPPreferentialViewController.m; sourceTree = "<group>"; };
+		57A080561B12A88B006DE5AB /* GPSelectCarViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GPSelectCarViewController.h; sourceTree = "<group>"; };
+		57A080571B12A88B006DE5AB /* GPSelectCarViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GPSelectCarViewController.m; sourceTree = "<group>"; };
+		57A080581B12A88B006DE5AB /* UIImage+GPImageRendering.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+GPImageRendering.h"; sourceTree = "<group>"; };
+		57A080591B12A88B006DE5AB /* UIImage+GPImageRendering.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+GPImageRendering.m"; sourceTree = "<group>"; };
+		57A080691B12AA53006DE5AB /* GPCarNewsPch.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GPCarNewsPch.pch; sourceTree = "<group>"; };
+		57A0806C1B12AE9A006DE5AB /* GPSettingCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GPSettingCell.h; sourceTree = "<group>"; };
+		57A0806D1B12AE9A006DE5AB /* GPSettingCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GPSettingCell.m; sourceTree = "<group>"; };
+		57A080701B12B0A0006DE5AB /* GPSettingItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GPSettingItem.h; sourceTree = "<group>"; };
+		57A080711B12B0A0006DE5AB /* GPSettingItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GPSettingItem.m; sourceTree = "<group>"; };
+		57A080731B12B7E4006DE5AB /* GPSettingGroup.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GPSettingGroup.h; sourceTree = "<group>"; };
+		57A080741B12B7E4006DE5AB /* GPSettingGroup.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GPSettingGroup.m; sourceTree = "<group>"; };
+		57A080761B12BEA3006DE5AB /* GPArrowItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GPArrowItem.h; sourceTree = "<group>"; };
+		57A080771B12BEA3006DE5AB /* GPArrowItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GPArrowItem.m; sourceTree = "<group>"; };
+		57A0807A1B12C10B006DE5AB /* GPMyFavoController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GPMyFavoController.h; sourceTree = "<group>"; };
+		57A0807B1B12C10B006DE5AB /* GPMyFavoController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GPMyFavoController.m; sourceTree = "<group>"; };
+		57A0807D1B12C74A006DE5AB /* GPBaseSettingController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GPBaseSettingController.h; sourceTree = "<group>"; };
+		57A0807E1B12C74A006DE5AB /* GPBaseSettingController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GPBaseSettingController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -76,6 +119,15 @@
 		57A080291B12A7E7006DE5AB /* CarNews */ = {
 			isa = PBXGroup;
 			children = (
+				57A080681B12A980006DE5AB /* main(主要) */,
+				57A080671B12A96B006DE5AB /* mySpace(我的) */,
+				57A080661B12A95B006DE5AB /* forum(论坛) */,
+				57A080651B12A947006DE5AB /* preferential(特惠) */,
+				57A080641B12A932006DE5AB /* selectCar(找车) */,
+				57A080631B12A910006DE5AB /* news(资讯) */,
+				57A080621B12A905006DE5AB /* Others */,
+				57A080581B12A88B006DE5AB /* UIImage+GPImageRendering.h */,
+				57A080591B12A88B006DE5AB /* UIImage+GPImageRendering.m */,
 				57A0802E1B12A7E7006DE5AB /* AppDelegate.h */,
 				57A0802F1B12A7E7006DE5AB /* AppDelegate.m */,
 				57A080311B12A7E7006DE5AB /* Images.xcassets */,
@@ -90,6 +142,7 @@
 			children = (
 				57A0802B1B12A7E7006DE5AB /* Info.plist */,
 				57A0802C1B12A7E7006DE5AB /* main.m */,
+				57A080691B12AA53006DE5AB /* GPCarNewsPch.pch */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -109,6 +162,113 @@
 				57A0803F1B12A7E7006DE5AB /* Info.plist */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		57A080621B12A905006DE5AB /* Others */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Others;
+			sourceTree = "<group>";
+		};
+		57A080631B12A910006DE5AB /* news(资讯) */ = {
+			isa = PBXGroup;
+			children = (
+				57A080521B12A88B006DE5AB /* GPNewsViewController.h */,
+				57A080531B12A88B006DE5AB /* GPNewsViewController.m */,
+			);
+			name = "news(资讯)";
+			sourceTree = "<group>";
+		};
+		57A080641B12A932006DE5AB /* selectCar(找车) */ = {
+			isa = PBXGroup;
+			children = (
+				57A080561B12A88B006DE5AB /* GPSelectCarViewController.h */,
+				57A080571B12A88B006DE5AB /* GPSelectCarViewController.m */,
+			);
+			name = "selectCar(找车)";
+			sourceTree = "<group>";
+		};
+		57A080651B12A947006DE5AB /* preferential(特惠) */ = {
+			isa = PBXGroup;
+			children = (
+				57A080541B12A88B006DE5AB /* GPPreferentialViewController.h */,
+				57A080551B12A88B006DE5AB /* GPPreferentialViewController.m */,
+			);
+			name = "preferential(特惠)";
+			sourceTree = "<group>";
+		};
+		57A080661B12A95B006DE5AB /* forum(论坛) */ = {
+			isa = PBXGroup;
+			children = (
+				57A0804E1B12A88B006DE5AB /* GPForumViewController.h */,
+				57A0804F1B12A88B006DE5AB /* GPForumViewController.m */,
+			);
+			name = "forum(论坛)";
+			sourceTree = "<group>";
+		};
+		57A080671B12A96B006DE5AB /* mySpace(我的) */ = {
+			isa = PBXGroup;
+			children = (
+				57A080791B12C0CE006DE5AB /* JumpController(跳转的控制器) */,
+				57A0806F1B12B070006DE5AB /* Models */,
+				57A0806B1B12AE66006DE5AB /* Views */,
+				57A0806A1B12ADE7006DE5AB /* Controllers */,
+			);
+			name = "mySpace(我的)";
+			sourceTree = "<group>";
+		};
+		57A080681B12A980006DE5AB /* main(主要) */ = {
+			isa = PBXGroup;
+			children = (
+				57A0804A1B12A88B006DE5AB /* GPBaseNaviController.h */,
+				57A0804B1B12A88B006DE5AB /* GPBaseNaviController.m */,
+				57A0804C1B12A88B006DE5AB /* GPBaseTabController.h */,
+				57A0804D1B12A88B006DE5AB /* GPBaseTabController.m */,
+			);
+			name = "main(主要)";
+			sourceTree = "<group>";
+		};
+		57A0806A1B12ADE7006DE5AB /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				57A080501B12A88B006DE5AB /* GPMySpaceViewController.h */,
+				57A080511B12A88B006DE5AB /* GPMySpaceViewController.m */,
+				57A0807D1B12C74A006DE5AB /* GPBaseSettingController.h */,
+				57A0807E1B12C74A006DE5AB /* GPBaseSettingController.m */,
+			);
+			name = Controllers;
+			sourceTree = "<group>";
+		};
+		57A0806B1B12AE66006DE5AB /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				57A0806C1B12AE9A006DE5AB /* GPSettingCell.h */,
+				57A0806D1B12AE9A006DE5AB /* GPSettingCell.m */,
+			);
+			name = Views;
+			sourceTree = "<group>";
+		};
+		57A0806F1B12B070006DE5AB /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				57A080701B12B0A0006DE5AB /* GPSettingItem.h */,
+				57A080711B12B0A0006DE5AB /* GPSettingItem.m */,
+				57A080731B12B7E4006DE5AB /* GPSettingGroup.h */,
+				57A080741B12B7E4006DE5AB /* GPSettingGroup.m */,
+				57A080761B12BEA3006DE5AB /* GPArrowItem.h */,
+				57A080771B12BEA3006DE5AB /* GPArrowItem.m */,
+			);
+			name = Models;
+			sourceTree = "<group>";
+		};
+		57A080791B12C0CE006DE5AB /* JumpController(跳转的控制器) */ = {
+			isa = PBXGroup;
+			children = (
+				57A0807A1B12C10B006DE5AB /* GPMyFavoController.h */,
+				57A0807B1B12C10B006DE5AB /* GPMyFavoController.m */,
+			);
+			name = "JumpController(跳转的控制器)";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -210,8 +370,22 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				57A0805F1B12A88B006DE5AB /* GPPreferentialViewController.m in Sources */,
+				57A0805C1B12A88B006DE5AB /* GPForumViewController.m in Sources */,
+				57A080721B12B0A0006DE5AB /* GPSettingItem.m in Sources */,
+				57A080781B12BEA3006DE5AB /* GPArrowItem.m in Sources */,
 				57A080301B12A7E7006DE5AB /* AppDelegate.m in Sources */,
+				57A0806E1B12AE9A006DE5AB /* GPSettingCell.m in Sources */,
+				57A0805D1B12A88B006DE5AB /* GPMySpaceViewController.m in Sources */,
+				57A0805B1B12A88B006DE5AB /* GPBaseTabController.m in Sources */,
+				57A0807F1B12C74A006DE5AB /* GPBaseSettingController.m in Sources */,
+				57A080601B12A88B006DE5AB /* GPSelectCarViewController.m in Sources */,
 				57A0802D1B12A7E7006DE5AB /* main.m in Sources */,
+				57A080751B12B7E4006DE5AB /* GPSettingGroup.m in Sources */,
+				57A0807C1B12C10B006DE5AB /* GPMyFavoController.m in Sources */,
+				57A0805E1B12A88B006DE5AB /* GPNewsViewController.m in Sources */,
+				57A0805A1B12A88B006DE5AB /* GPBaseNaviController.m in Sources */,
+				57A080611B12A88B006DE5AB /* UIImage+GPImageRendering.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -329,6 +503,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				GCC_PREFIX_HEADER = "$(SRCROOT)/$(PROJECT_NAME)/GPCarNewsPch.pch";
 				INFOPLIST_FILE = CarNews/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -339,6 +514,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				GCC_PREFIX_HEADER = "$(SRCROOT)/$(PROJECT_NAME)/GPCarNewsPch.pch";
 				INFOPLIST_FILE = CarNews/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";

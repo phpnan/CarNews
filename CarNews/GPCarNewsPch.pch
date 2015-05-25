@@ -1,0 +1,17 @@
+//
+//  GPCarNewsPch.pch
+//  CarNews
+//
+//  Created by chengxun on 15/5/25.
+//  Copyright (c) 2015年 chengxun. All rights reserved.
+//
+
+#ifndef CarNews_GPCarNewsPch_pch
+#define CarNews_GPCarNewsPch_pch
+
+#define GPLog(...) NSLog(__VA_ARGS__)
+/**
+ *  导入一个UIImage的原画分类
+ */
+#import "UIImage+GPImageRendering.h"
+#endif
