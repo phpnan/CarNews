@@ -17,4 +17,13 @@
     item.title = title;
     return item;
 }
+
++ (instancetype)settingItemWithIcon:(NSString*)icon andTitle:(NSString*)title anddetailTitle:(NSString*)detail
+{
+    GPSettingItem * item = [[self alloc]init];
+    item.icon = icon;
+    item.title = title;
+    item.detail = detail;
+    return item;
+}
 @end

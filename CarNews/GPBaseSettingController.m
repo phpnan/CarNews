@@ -20,6 +20,10 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    /**
+     *  所有继承了这个类的设置选项的弹簧都被关闭了
+     */
+    self.tableView.bounces  = NO;
     
     // Uncomment the following line to preserve selection between presentations.
     // self.clearsSelectionOnViewWillAppear = NO;
@@ -69,7 +73,7 @@
     GPSettingCell * cell = [tableView dequeueReusableCellWithIdentifier:ID];
     if(cell == nil)
     {
-        cell = [[GPSettingCell alloc]initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:ID];
+        cell = [[GPSettingCell alloc]initWithStyle:UITableViewCellStyleValue1 reuseIdentifier:ID];
     }
     
     GPSettingGroup * group = self.data[indexPath.section];
@@ -90,16 +94,28 @@
     
     GPSettingGroup * group = self.data[indexPath.section];
     GPSettingItem * item = group.settingItem[indexPath.row];
+    
+    if(item.option)
+    {
+        item.option();
+    }
     if([item isKindOfClass:[GPArrowItem class]])
     {
+        
         GPArrowItem * arrowItem = (GPArrowItem*)item;
-        
-        UIViewController * controller = [[arrowItem.vcTargetClass alloc]init];
-        
-        controller.title = arrowItem.title;
-        controller.view.backgroundColor = [UIColor redColor];
-        
-        [self.navigationController pushViewController:controller animated:YES];
+        /**
+         *  存在下一个控制器才跳转
+         */
+        if(arrowItem.vcTargetClass)
+        {
+            UIViewController * controller = [[arrowItem.vcTargetClass alloc]init];
+            
+            controller.title = arrowItem.title;
+            controller.view.backgroundColor = [UIColor redColor];
+            
+            [self.navigationController pushViewController:controller animated:YES];
+        }
+       
     }
     
 }

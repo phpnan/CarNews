@@ -47,7 +47,7 @@
     self.tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
     
     self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc]initWithImage:[UIImage imageNamed:@"setting"] style:UIBarButtonItemStylePlain target:self action:@selector(settingTouch)];
-    
+  
  
     [self addGroup];
 }
@@ -56,7 +56,8 @@
 {
     GPSettingController * settingController = [[GPSettingController alloc]init];
     settingController.title = @"更多";
-//    settingController.navigationItem.leftBarButtonItem.title = nil;
+    
+    
     [self.navigationController showViewController:settingController sender:nil];
 }
 
@@ -74,6 +75,11 @@
     group.settingItem = @[myFavo,myForum,myOrder,myNews,drawlots];
     
     [self.data addObject:group];
+}
+
+- (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section
+{
+    return 0;
 }
 
 

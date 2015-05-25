@@ -54,9 +54,13 @@
     /**
      *  如果有图标才传图标
      */
-    if(item.icon!=nil)
+    if(item.icon)
     {
         self.imageView.image = [UIImage imageNamed:item.icon];
+    }
+    if(item.detail)
+    {
+        self.detailTextLabel.text = item.detail;
     }
 }
 

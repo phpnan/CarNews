@@ -29,6 +29,9 @@
 		57A080831B12CA2E006DE5AB /* GPSpaceHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 57A080821B12CA2E006DE5AB /* GPSpaceHeaderView.m */; };
 		57A080851B12CA4D006DE5AB /* GPSpaceHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 57A080841B12CA4D006DE5AB /* GPSpaceHeaderView.xib */; };
 		57A080881B12D02D006DE5AB /* GPSettingController.m in Sources */ = {isa = PBXBuildFile; fileRef = 57A080871B12D02D006DE5AB /* GPSettingController.m */; };
+		57A080901B12E6ED006DE5AB /* MBProgressHUD+NJ.m in Sources */ = {isa = PBXBuildFile; fileRef = 57A0808C1B12E6ED006DE5AB /* MBProgressHUD+NJ.m */; };
+		57A080911B12E6ED006DE5AB /* MBProgressHUD.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 57A0808D1B12E6ED006DE5AB /* MBProgressHUD.bundle */; };
+		57A080921B12E6ED006DE5AB /* MBProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = 57A0808F1B12E6ED006DE5AB /* MBProgressHUD.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -86,6 +89,11 @@
 		57A080841B12CA4D006DE5AB /* GPSpaceHeaderView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = GPSpaceHeaderView.xib; sourceTree = "<group>"; };
 		57A080861B12D02D006DE5AB /* GPSettingController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GPSettingController.h; sourceTree = "<group>"; };
 		57A080871B12D02D006DE5AB /* GPSettingController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GPSettingController.m; sourceTree = "<group>"; };
+		57A0808B1B12E6ED006DE5AB /* MBProgressHUD+NJ.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "MBProgressHUD+NJ.h"; sourceTree = "<group>"; };
+		57A0808C1B12E6ED006DE5AB /* MBProgressHUD+NJ.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "MBProgressHUD+NJ.m"; sourceTree = "<group>"; };
+		57A0808D1B12E6ED006DE5AB /* MBProgressHUD.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = MBProgressHUD.bundle; sourceTree = "<group>"; };
+		57A0808E1B12E6ED006DE5AB /* MBProgressHUD.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MBProgressHUD.h; sourceTree = "<group>"; };
+		57A0808F1B12E6ED006DE5AB /* MBProgressHUD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MBProgressHUD.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -175,6 +183,7 @@
 		57A080621B12A905006DE5AB /* Others */ = {
 			isa = PBXGroup;
 			children = (
+				57A080891B12E6E0006DE5AB /* libs */,
 			);
 			name = Others;
 			sourceTree = "<group>";
@@ -284,6 +293,26 @@
 			name = "JumpController(跳转的控制器)";
 			sourceTree = "<group>";
 		};
+		57A080891B12E6E0006DE5AB /* libs */ = {
+			isa = PBXGroup;
+			children = (
+				57A0808A1B12E6ED006DE5AB /* MBProgressHUD */,
+			);
+			name = libs;
+			sourceTree = "<group>";
+		};
+		57A0808A1B12E6ED006DE5AB /* MBProgressHUD */ = {
+			isa = PBXGroup;
+			children = (
+				57A0808B1B12E6ED006DE5AB /* MBProgressHUD+NJ.h */,
+				57A0808C1B12E6ED006DE5AB /* MBProgressHUD+NJ.m */,
+				57A0808D1B12E6ED006DE5AB /* MBProgressHUD.bundle */,
+				57A0808E1B12E6ED006DE5AB /* MBProgressHUD.h */,
+				57A0808F1B12E6ED006DE5AB /* MBProgressHUD.m */,
+			);
+			path = MBProgressHUD;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -365,6 +394,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				57A080351B12A7E7006DE5AB /* LaunchScreen.xib in Resources */,
+				57A080911B12E6ED006DE5AB /* MBProgressHUD.bundle in Resources */,
 				57A080321B12A7E7006DE5AB /* Images.xcassets in Resources */,
 				57A080851B12CA4D006DE5AB /* GPSpaceHeaderView.xib in Resources */,
 			);
@@ -390,6 +420,8 @@
 				57A080831B12CA2E006DE5AB /* GPSpaceHeaderView.m in Sources */,
 				57A080781B12BEA3006DE5AB /* GPArrowItem.m in Sources */,
 				57A080881B12D02D006DE5AB /* GPSettingController.m in Sources */,
+				57A080901B12E6ED006DE5AB /* MBProgressHUD+NJ.m in Sources */,
+				57A080921B12E6ED006DE5AB /* MBProgressHUD.m in Sources */,
 				57A080301B12A7E7006DE5AB /* AppDelegate.m in Sources */,
 				57A0806E1B12AE9A006DE5AB /* GPSettingCell.m in Sources */,
 				57A0805D1B12A88B006DE5AB /* GPMySpaceViewController.m in Sources */,

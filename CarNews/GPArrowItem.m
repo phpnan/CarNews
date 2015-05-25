@@ -18,4 +18,11 @@
     
     return arrowItem;
 }
+
++ (instancetype)settingItemWithIcon:(NSString*)icon andTitle:(NSString*)title anddetailTitle:(NSString*)detail andVcTargetClass:(Class)vcTargetClass
+{
+    GPArrowItem * arrowItem = [self settingItemWithIcon:icon andTitle:title anddetailTitle:detail];
+    arrowItem.vcTargetClass = vcTargetClass;
+    return arrowItem;
+}
 @end

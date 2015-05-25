@@ -15,5 +15,5 @@
 @property (nonatomic,assign)Class vcTargetClass;
 
 + (instancetype)settingItemWithIcon:(NSString*)icon andTitle:(NSString*)title andVcTargetClass:(Class)vcTargetClass;
-
++ (instancetype)settingItemWithIcon:(NSString*)icon andTitle:(NSString*)title anddetailTitle:(NSString*)detail andVcTargetClass:(Class)vcTargetClass;
 @end

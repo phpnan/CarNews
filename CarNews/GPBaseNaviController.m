@@ -34,6 +34,7 @@
     attrs[NSForegroundColorAttributeName] = [UIColor blackColor];
     attrs[NSFontAttributeName] = [UIFont systemFontOfSize:18];
     [naviBar setTitleTextAttributes:attrs];
+    
 }
 
 - (void)didReceiveMemoryWarning {
