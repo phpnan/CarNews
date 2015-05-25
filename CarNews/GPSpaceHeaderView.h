@@ -7,7 +7,13 @@
 //
 
 #import <UIKit/UIKit.h>
+@class GPSpaceHeaderView;
+@protocol GPSpaceHeaderViewDelegate <NSObject>
+- (void)spaceHeaderView:(GPSpaceHeaderView*)spaceHeaderView;
+@end
 
 @interface GPSpaceHeaderView : UIView
+
+@property (nonatomic,weak)id<GPSpaceHeaderViewDelegate>delegate;
 + (instancetype)spaceHeaderView;
 @end

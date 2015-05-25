@@ -32,6 +32,8 @@
 		57A080901B12E6ED006DE5AB /* MBProgressHUD+NJ.m in Sources */ = {isa = PBXBuildFile; fileRef = 57A0808C1B12E6ED006DE5AB /* MBProgressHUD+NJ.m */; };
 		57A080911B12E6ED006DE5AB /* MBProgressHUD.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 57A0808D1B12E6ED006DE5AB /* MBProgressHUD.bundle */; };
 		57A080921B12E6ED006DE5AB /* MBProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = 57A0808F1B12E6ED006DE5AB /* MBProgressHUD.m */; };
+		57A080961B12F15B006DE5AB /* GPLoginController.m in Sources */ = {isa = PBXBuildFile; fileRef = 57A080941B12F15B006DE5AB /* GPLoginController.m */; };
+		57A080971B12F15B006DE5AB /* GPLoginController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 57A080951B12F15B006DE5AB /* GPLoginController.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -94,6 +96,9 @@
 		57A0808D1B12E6ED006DE5AB /* MBProgressHUD.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = MBProgressHUD.bundle; sourceTree = "<group>"; };
 		57A0808E1B12E6ED006DE5AB /* MBProgressHUD.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MBProgressHUD.h; sourceTree = "<group>"; };
 		57A0808F1B12E6ED006DE5AB /* MBProgressHUD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MBProgressHUD.m; sourceTree = "<group>"; };
+		57A080931B12F15B006DE5AB /* GPLoginController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GPLoginController.h; sourceTree = "<group>"; };
+		57A080941B12F15B006DE5AB /* GPLoginController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GPLoginController.m; sourceTree = "<group>"; };
+		57A080951B12F15B006DE5AB /* GPLoginController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = GPLoginController.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -255,6 +260,9 @@
 				57A0807E1B12C74A006DE5AB /* GPBaseSettingController.m */,
 				57A080861B12D02D006DE5AB /* GPSettingController.h */,
 				57A080871B12D02D006DE5AB /* GPSettingController.m */,
+				57A080931B12F15B006DE5AB /* GPLoginController.h */,
+				57A080941B12F15B006DE5AB /* GPLoginController.m */,
+				57A080951B12F15B006DE5AB /* GPLoginController.xib */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -394,6 +402,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				57A080351B12A7E7006DE5AB /* LaunchScreen.xib in Resources */,
+				57A080971B12F15B006DE5AB /* GPLoginController.xib in Resources */,
 				57A080911B12E6ED006DE5AB /* MBProgressHUD.bundle in Resources */,
 				57A080321B12A7E7006DE5AB /* Images.xcassets in Resources */,
 				57A080851B12CA4D006DE5AB /* GPSpaceHeaderView.xib in Resources */,
@@ -427,6 +436,7 @@
 				57A0805D1B12A88B006DE5AB /* GPMySpaceViewController.m in Sources */,
 				57A0805B1B12A88B006DE5AB /* GPBaseTabController.m in Sources */,
 				57A0807F1B12C74A006DE5AB /* GPBaseSettingController.m in Sources */,
+				57A080961B12F15B006DE5AB /* GPLoginController.m in Sources */,
 				57A080601B12A88B006DE5AB /* GPSelectCarViewController.m in Sources */,
 				57A0802D1B12A7E7006DE5AB /* main.m in Sources */,
 				57A080751B12B7E4006DE5AB /* GPSettingGroup.m in Sources */,

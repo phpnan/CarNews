@@ -14,11 +14,24 @@
 #import "GPArrowItem.h"
 #import "GPSpaceHeaderView.h"
 #import "GPSettingController.h"
-@interface GPMySpaceViewController ()
+#import "GPLoginController.h"
+@interface GPMySpaceViewController ()<GPSpaceHeaderViewDelegate>
 
 @end
 
 @implementation GPMySpaceViewController
+
+#pragma mark SpaceHeaderView的代理方法
+
+- (void)spaceHeaderView:(GPSpaceHeaderView *)spaceHeaderView
+{
+    GPLoginController * loginController = [[GPLoginController alloc]init];
+    
+    loginController.title = @"用户登录";
+    
+    
+    [self.navigationController showViewController:loginController sender:nil];
+}
 
 - (instancetype)init
 {
@@ -40,14 +53,16 @@
     /**
      *  添加头部
      */
-    self.tableView.tableHeaderView = [GPSpaceHeaderView spaceHeaderView];
+    GPSpaceHeaderView * spaceHeaderView =[GPSpaceHeaderView spaceHeaderView];
+    spaceHeaderView.delegate = self;
+    self.tableView.tableHeaderView = spaceHeaderView ;
     /**
      *  让分割线消失
      */
     self.tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
     
     self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc]initWithImage:[UIImage imageNamed:@"setting"] style:UIBarButtonItemStylePlain target:self action:@selector(settingTouch)];
-  
+    
  
     [self addGroup];
 }
@@ -56,7 +71,6 @@
 {
     GPSettingController * settingController = [[GPSettingController alloc]init];
     settingController.title = @"更多";
-    
     
     [self.navigationController showViewController:settingController sender:nil];
 }

@@ -7,15 +7,17 @@
 //
 
 #import "GPSpaceHeaderView.h"
-
+#import "GPLoginController.h"
+#import "GPBaseNaviController.h"
 @implementation GPSpaceHeaderView
 + (instancetype)spaceHeaderView
 {
     return [[NSBundle mainBundle]loadNibNamed:@"GPSpaceHeaderView" owner:nil options:nil][0];
     
 }
+
 - (IBAction)loginTouch:(UIButton *)sender {
-    NSLog(@"%s",__func__);
+    [_delegate spaceHeaderView:self];
 }
 
 @end
