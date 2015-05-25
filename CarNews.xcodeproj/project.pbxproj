@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5786A60C1B1323B10016C30F /* GPMyFavoController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5786A60A1B1323B10016C30F /* GPMyFavoController.m */; };
+		5786A60D1B1323B10016C30F /* GPMyFavoController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5786A60B1B1323B10016C30F /* GPMyFavoController.xib */; };
+		5786A6111B1327F80016C30F /* GPSwitchCityController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5786A60F1B1327F80016C30F /* GPSwitchCityController.m */; };
+		5786A6121B1327F80016C30F /* GPSwitchCityController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5786A6101B1327F80016C30F /* GPSwitchCityController.xib */; };
 		57A0802D1B12A7E7006DE5AB /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 57A0802C1B12A7E7006DE5AB /* main.m */; };
 		57A080301B12A7E7006DE5AB /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 57A0802F1B12A7E7006DE5AB /* AppDelegate.m */; };
 		57A080321B12A7E7006DE5AB /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 57A080311B12A7E7006DE5AB /* Images.xcassets */; };
@@ -24,7 +28,6 @@
 		57A080721B12B0A0006DE5AB /* GPSettingItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 57A080711B12B0A0006DE5AB /* GPSettingItem.m */; };
 		57A080751B12B7E4006DE5AB /* GPSettingGroup.m in Sources */ = {isa = PBXBuildFile; fileRef = 57A080741B12B7E4006DE5AB /* GPSettingGroup.m */; };
 		57A080781B12BEA3006DE5AB /* GPArrowItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 57A080771B12BEA3006DE5AB /* GPArrowItem.m */; };
-		57A0807C1B12C10B006DE5AB /* GPMyFavoController.m in Sources */ = {isa = PBXBuildFile; fileRef = 57A0807B1B12C10B006DE5AB /* GPMyFavoController.m */; };
 		57A0807F1B12C74A006DE5AB /* GPBaseSettingController.m in Sources */ = {isa = PBXBuildFile; fileRef = 57A0807E1B12C74A006DE5AB /* GPBaseSettingController.m */; };
 		57A080831B12CA2E006DE5AB /* GPSpaceHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 57A080821B12CA2E006DE5AB /* GPSpaceHeaderView.m */; };
 		57A080851B12CA4D006DE5AB /* GPSpaceHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 57A080841B12CA4D006DE5AB /* GPSpaceHeaderView.xib */; };
@@ -47,6 +50,12 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		5786A6091B1323B10016C30F /* GPMyFavoController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GPMyFavoController.h; sourceTree = "<group>"; };
+		5786A60A1B1323B10016C30F /* GPMyFavoController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GPMyFavoController.m; sourceTree = "<group>"; };
+		5786A60B1B1323B10016C30F /* GPMyFavoController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = GPMyFavoController.xib; sourceTree = "<group>"; };
+		5786A60E1B1327F80016C30F /* GPSwitchCityController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GPSwitchCityController.h; sourceTree = "<group>"; };
+		5786A60F1B1327F80016C30F /* GPSwitchCityController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GPSwitchCityController.m; sourceTree = "<group>"; };
+		5786A6101B1327F80016C30F /* GPSwitchCityController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = GPSwitchCityController.xib; sourceTree = "<group>"; };
 		57A080271B12A7E7006DE5AB /* CarNews.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CarNews.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		57A0802B1B12A7E7006DE5AB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		57A0802C1B12A7E7006DE5AB /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -82,8 +91,6 @@
 		57A080741B12B7E4006DE5AB /* GPSettingGroup.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GPSettingGroup.m; sourceTree = "<group>"; };
 		57A080761B12BEA3006DE5AB /* GPArrowItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GPArrowItem.h; sourceTree = "<group>"; };
 		57A080771B12BEA3006DE5AB /* GPArrowItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GPArrowItem.m; sourceTree = "<group>"; };
-		57A0807A1B12C10B006DE5AB /* GPMyFavoController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GPMyFavoController.h; sourceTree = "<group>"; };
-		57A0807B1B12C10B006DE5AB /* GPMyFavoController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GPMyFavoController.m; sourceTree = "<group>"; };
 		57A0807D1B12C74A006DE5AB /* GPBaseSettingController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GPBaseSettingController.h; sourceTree = "<group>"; };
 		57A0807E1B12C74A006DE5AB /* GPBaseSettingController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GPBaseSettingController.m; sourceTree = "<group>"; };
 		57A080811B12CA2E006DE5AB /* GPSpaceHeaderView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GPSpaceHeaderView.h; sourceTree = "<group>"; };
@@ -295,8 +302,12 @@
 		57A080791B12C0CE006DE5AB /* JumpController(跳转的控制器) */ = {
 			isa = PBXGroup;
 			children = (
-				57A0807A1B12C10B006DE5AB /* GPMyFavoController.h */,
-				57A0807B1B12C10B006DE5AB /* GPMyFavoController.m */,
+				5786A6091B1323B10016C30F /* GPMyFavoController.h */,
+				5786A60A1B1323B10016C30F /* GPMyFavoController.m */,
+				5786A60B1B1323B10016C30F /* GPMyFavoController.xib */,
+				5786A60E1B1327F80016C30F /* GPSwitchCityController.h */,
+				5786A60F1B1327F80016C30F /* GPSwitchCityController.m */,
+				5786A6101B1327F80016C30F /* GPSwitchCityController.xib */,
 			);
 			name = "JumpController(跳转的控制器)";
 			sourceTree = "<group>";
@@ -401,6 +412,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5786A6121B1327F80016C30F /* GPSwitchCityController.xib in Resources */,
+				5786A60D1B1323B10016C30F /* GPMyFavoController.xib in Resources */,
 				57A080351B12A7E7006DE5AB /* LaunchScreen.xib in Resources */,
 				57A080971B12F15B006DE5AB /* GPLoginController.xib in Resources */,
 				57A080911B12E6ED006DE5AB /* MBProgressHUD.bundle in Resources */,
@@ -440,10 +453,11 @@
 				57A080601B12A88B006DE5AB /* GPSelectCarViewController.m in Sources */,
 				57A0802D1B12A7E7006DE5AB /* main.m in Sources */,
 				57A080751B12B7E4006DE5AB /* GPSettingGroup.m in Sources */,
-				57A0807C1B12C10B006DE5AB /* GPMyFavoController.m in Sources */,
 				57A0805E1B12A88B006DE5AB /* GPNewsViewController.m in Sources */,
 				57A0805A1B12A88B006DE5AB /* GPBaseNaviController.m in Sources */,
+				5786A6111B1327F80016C30F /* GPSwitchCityController.m in Sources */,
 				57A080611B12A88B006DE5AB /* UIImage+GPImageRendering.m in Sources */,
+				5786A60C1B1323B10016C30F /* GPMyFavoController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -632,6 +646,7 @@
 				57A080461B12A7E7006DE5AB /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		57A080471B12A7E7006DE5AB /* Build configuration list for PBXNativeTarget "CarNewsTests" */ = {
 			isa = XCConfigurationList;
@@ -640,6 +655,7 @@
 				57A080491B12A7E7006DE5AB /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

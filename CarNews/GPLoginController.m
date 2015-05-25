@@ -30,6 +30,7 @@
 
 - (void)getPwdMessage
 {
+#warning 找回密码
     GPLog(@"找回密码");
 }
 

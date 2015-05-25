@@ -15,6 +15,7 @@
 #import "GPSpaceHeaderView.h"
 #import "GPSettingController.h"
 #import "GPLoginController.h"
+#import "MBProgressHUD+NJ.h"
 @interface GPMySpaceViewController ()<GPSpaceHeaderViewDelegate>
 
 @end
@@ -78,13 +79,25 @@
 - (void)addGroup
 {
     GPSettingGroup * group = [[GPSettingGroup alloc]init];
-#warning 在这里设置我们要跳转的控制器
+    
+
     GPSettingItem * myFavo = [GPArrowItem settingItemWithIcon:@"myFavo" andTitle:@"我的收藏" andVcTargetClass:[GPMyFavoController class]];
     
-    GPSettingItem * myForum = [GPArrowItem settingItemWithIcon:@"myForum" andTitle:@"我的论坛" andVcTargetClass:[GPMyFavoController class]];
-    GPSettingItem * myOrder = [GPArrowItem settingItemWithIcon:@"myOrder" andTitle:@"购车优惠" andVcTargetClass:[GPMyFavoController class]];
-    GPSettingItem * myNews = [GPArrowItem settingItemWithIcon:@"myNews" andTitle:@"我的通知" andVcTargetClass:[GPMyFavoController class]];
-    GPSettingItem * drawlots = [GPArrowItem settingItemWithIcon:@"drawlots" andTitle:@"北京摇号" andVcTargetClass:[GPMyFavoController class]];
+    GPSettingItem * myForum = [GPArrowItem settingItemWithIcon:@"myForum" andTitle:@"我的论坛" andVcTargetClass:[GPLoginController class]];
+    
+    
+    GPSettingItem * myOrder = [GPArrowItem settingItemWithIcon:@"myOrder" andTitle:@"购车优惠" andVcTargetClass:nil];
+    myOrder.option = ^{
+        
+        [MBProgressHUD showMessage:@"没有关注车辆,没有优惠信息"];
+        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.5 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+            [MBProgressHUD hideHUD];
+        });
+        
+    };
+#warning 这两个跳转控制器的请求无法解析,就先封闭吧
+    GPSettingItem * myNews = [GPArrowItem settingItemWithIcon:@"myNews" andTitle:@"我的通知" andVcTargetClass:nil];
+    GPSettingItem * drawlots = [GPArrowItem settingItemWithIcon:@"drawlots" andTitle:@"北京摇号" andVcTargetClass:nil];
     
     group.settingItem = @[myFavo,myForum,myOrder,myNews,drawlots];
     

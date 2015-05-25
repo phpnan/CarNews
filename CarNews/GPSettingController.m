@@ -48,6 +48,7 @@
 
 - (void)addGroup
 {
+    
 #warning 这里要设置下一步跳转的控制器以及一些block的操作
     
     GPSettingGroup * group = [[GPSettingGroup alloc]init];
@@ -65,10 +66,12 @@
         });
     };
     
+    
     GPSettingItem * removeCache = [GPSettingItem settingItemWithIcon:nil andTitle:@"清除缓存" anddetailTitle:@"0.00M"];
     removeCache.option = ^{
         [MBProgressHUD showSuccess:@"没有缓存无需清理"];
     };
+    
     
     GPSettingItem * suggest = [GPArrowItem settingItemWithIcon:nil andTitle:@"意见反馈"];
     

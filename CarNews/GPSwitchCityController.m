@@ -1,33 +1,22 @@
 //
-//  GPMyFavoController.m
+//  GPSwitchCityController.m
 //  CarNews
 //
 //  Created by chengxun on 15/5/25.
 //  Copyright (c) 2015年 chengxun. All rights reserved.
 //
 
-#import "GPMyFavoController.h"
-#import "MBProgressHUD+NJ.h"
-@interface GPMyFavoController ()
+#import "GPSwitchCityController.h"
+
+@interface GPSwitchCityController ()
 
 @end
 
-@implementation GPMyFavoController
-
+@implementation GPSwitchCityController
+#warning 城市设置的切换,先写到这里♪(^∇^*)
 - (void)viewDidLoad {
     [super viewDidLoad];
-    UIBarButtonItem * edit = [[UIBarButtonItem alloc]initWithTitle:@"编辑" style:UIBarButtonItemStylePlain target:self action:@selector(edit)];
-    self.navigationItem.rightBarButtonItem = edit;
     // Do any additional setup after loading the view from its nib.
-}
-
-- (void)edit
-{
-    [MBProgressHUD showMessage:@"没有收藏资讯信息!"];
-    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.5 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
-         [MBProgressHUD hideHUD];
-    });
-   
 }
 
 - (void)didReceiveMemoryWarning {

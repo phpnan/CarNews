@@ -111,7 +111,8 @@
             UIViewController * controller = [[arrowItem.vcTargetClass alloc]init];
             
             controller.title = arrowItem.title;
-            controller.view.backgroundColor = [UIColor redColor];
+            
+            controller.view.backgroundColor = [UIColor whiteColor];
             
             [self.navigationController pushViewController:controller animated:YES];
         }
