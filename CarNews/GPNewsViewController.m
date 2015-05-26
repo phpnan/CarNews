@@ -14,6 +14,10 @@
 #import "GPNewsCell.h"
 #import "GPNewsHeaderView.h"
 #import "MBProgressHUD+NJ.h"
+#import "GPNewDetail.h"
+#import "GPRESULT.h"
+#import "GPSub_page.h"
+#import "GPNewDetailController.h"
 
 
 /**
@@ -32,10 +36,23 @@ typedef enum
  *  这个是用来接收网络上发送来的数组的模型
  */
 @property (nonatomic,strong)GPNews * news;
+/**
+ *  这个是详细页面的模型
+ */
+@property (nonatomic,strong)GPNewDetail * newsDetail;
 
 @end
 
 @implementation GPNewsViewController
+
+- (GPNewDetail*)newsDetail
+{
+    if(_newsDetail == nil)
+    {
+        _newsDetail = [[GPNewDetail alloc]init];
+    }
+    return _newsDetail;
+}
 - (GPNews*)news
 {
     if(_news == nil)
@@ -113,23 +130,35 @@ typedef enum
     __unsafe_unretained typeof(self) share = self;
     [manager GET:urlStr parameters:params success:^(AFHTTPRequestOperation *operation, id responseObject) {
         
-        share.news = [GPNews objectWithKeyValues:responseObject];
-        
         GPNewsHeaderView * newsHeaderView = [GPNewsHeaderView newsHeaderView];
         
         switch (requestType) {
+                /**
+                 *  读取的是首页新闻的模型数据
+                 */
             case RequestTypeNew:
-                
+                share.news = [GPNews objectWithKeyValues:responseObject];
                 [share.tableView reloadData];
-               
+                
                 break;
                 
             case RequestTypeScrollView:
-                
+                /**
+                 *  首页滚动栏和首页新闻的模型一样,所以也这么读取
+                 */
+                share.news = [GPNews objectWithKeyValues:responseObject];
                 newsHeaderView.news = share.news;
                 
                 share.tableView.tableHeaderView = newsHeaderView;
-  
+                break;
+            case RequestTypeDetail:
+                /**
+                 *  给将要推出的详情界面传送数据
+                 */
+                share.newsDetail = [GPNewDetail objectWithKeyValues:responseObject];
+                GPLog(@"");
+                
+                break;
             default:
                 break;
         }
@@ -161,11 +190,11 @@ typedef enum
 {
     GPNewsCell * cell = [GPNewsCell newsCellWith:tableView];
  
-    GPNew * new = self.news.RESULT[indexPath.row];
+    GPNew * myNew = self.news.RESULT[indexPath.row];
     /**
      *  将取好的模型传递给定义好的cell对象
      */
-    cell.myNew = new;
+    cell.myNew = myNew;
     
     return cell;
 }
@@ -182,9 +211,19 @@ typedef enum
 {
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
     
-    GPNew * new = self.news.RESULT[indexPath.row];
+    GPNew * myNew = self.news.RESULT[indexPath.row];
+ 
+    [self sendRequestWith:GP_NEWS_DETAIL andParameters:@{@"articleId":   myNew.ID} andRequestType:RequestTypeDetail];
     
+    /**
+     *  点击这个tableViewCell之后会去访问一个detail的json,然后提供给下一个控制器解析的html的地址
+     */
     
+    GPNewDetailController * newDetailController = [[GPNewDetailController alloc]init];
+    
+    newDetailController.view.backgroundColor = [UIColor whiteColor];
+    
+    [self.navigationController showViewController:newDetailController sender:nil];
     
 }
 

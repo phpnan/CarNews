@@ -22,4 +22,6 @@
  */
 #define GP_NEWS_NEW @"http://mobile.auto.sohu.com/mcms/external/getNews.at"
 #define GP_NEWS_SCROLLVIEW @"http://mobile.auto.sohu.com/mcms/external/getFocusNews.at"
+#define GP_NEWS_DETAIL @"http://mobile.auto.sohu.com/mcms/external/queryNewsDetail.at"
+
 #endif

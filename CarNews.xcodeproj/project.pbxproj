@@ -43,6 +43,9 @@
 		5786A6801B1349850016C30F /* GPNews.m in Sources */ = {isa = PBXBuildFile; fileRef = 5786A67F1B1349850016C30F /* GPNews.m */; };
 		5786A6841B134E6D0016C30F /* GPNewsCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 5786A6821B134E6D0016C30F /* GPNewsCell.m */; };
 		5786A6851B134E6D0016C30F /* GPNewsCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5786A6831B134E6D0016C30F /* GPNewsCell.xib */; };
+		578DC9391B145E840060D4CF /* GPNewDetail.m in Sources */ = {isa = PBXBuildFile; fileRef = 578DC9381B145E840060D4CF /* GPNewDetail.m */; };
+		578DC93C1B145F0F0060D4CF /* GPRESULT.m in Sources */ = {isa = PBXBuildFile; fileRef = 578DC93B1B145F0F0060D4CF /* GPRESULT.m */; };
+		578DC93F1B1460250060D4CF /* GPSub_page.m in Sources */ = {isa = PBXBuildFile; fileRef = 578DC93E1B1460250060D4CF /* GPSub_page.m */; };
 		57A0802D1B12A7E7006DE5AB /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 57A0802C1B12A7E7006DE5AB /* main.m */; };
 		57A080301B12A7E7006DE5AB /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 57A0802F1B12A7E7006DE5AB /* AppDelegate.m */; };
 		57A080321B12A7E7006DE5AB /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 57A080311B12A7E7006DE5AB /* Images.xcassets */; };
@@ -163,6 +166,12 @@
 		5786A6811B134E6D0016C30F /* GPNewsCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GPNewsCell.h; sourceTree = "<group>"; };
 		5786A6821B134E6D0016C30F /* GPNewsCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GPNewsCell.m; sourceTree = "<group>"; };
 		5786A6831B134E6D0016C30F /* GPNewsCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = GPNewsCell.xib; sourceTree = "<group>"; };
+		578DC9371B145E840060D4CF /* GPNewDetail.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GPNewDetail.h; sourceTree = "<group>"; };
+		578DC9381B145E840060D4CF /* GPNewDetail.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GPNewDetail.m; sourceTree = "<group>"; };
+		578DC93A1B145F0F0060D4CF /* GPRESULT.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GPRESULT.h; sourceTree = "<group>"; };
+		578DC93B1B145F0F0060D4CF /* GPRESULT.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GPRESULT.m; sourceTree = "<group>"; };
+		578DC93D1B1460250060D4CF /* GPSub_page.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GPSub_page.h; sourceTree = "<group>"; };
+		578DC93E1B1460250060D4CF /* GPSub_page.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GPSub_page.m; sourceTree = "<group>"; };
 		57A080271B12A7E7006DE5AB /* CarNews.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CarNews.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		57A0802B1B12A7E7006DE5AB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		57A0802C1B12A7E7006DE5AB /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -301,6 +310,12 @@
 				5786A67C1B1348EB0016C30F /* GPNew.m */,
 				5786A67E1B1349850016C30F /* GPNews.h */,
 				5786A67F1B1349850016C30F /* GPNews.m */,
+				578DC9371B145E840060D4CF /* GPNewDetail.h */,
+				578DC9381B145E840060D4CF /* GPNewDetail.m */,
+				578DC93A1B145F0F0060D4CF /* GPRESULT.h */,
+				578DC93B1B145F0F0060D4CF /* GPRESULT.m */,
+				578DC93D1B1460250060D4CF /* GPSub_page.h */,
+				578DC93E1B1460250060D4CF /* GPSub_page.m */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -765,6 +780,7 @@
 				5786A65C1B1348290016C30F /* AFURLResponseSerialization.m in Sources */,
 				57A080881B12D02D006DE5AB /* GPSettingController.m in Sources */,
 				57C7B3A01B13FEFB00A74EA4 /* SDCollectionViewCell.m in Sources */,
+				578DC93C1B145F0F0060D4CF /* GPRESULT.m in Sources */,
 				57A080901B12E6ED006DE5AB /* MBProgressHUD+NJ.m in Sources */,
 				5786A6571B1348290016C30F /* AFHTTPSessionManager.m in Sources */,
 				57A080921B12E6ED006DE5AB /* MBProgressHUD.m in Sources */,
@@ -789,6 +805,7 @@
 				5786A6771B1348520016C30F /* UIWebView+AFNetworking.m in Sources */,
 				57C7B39D1B13FEFB00A74EA4 /* TAAnimatedDotView.m in Sources */,
 				5786A6711B1348520016C30F /* UIActivityIndicatorView+AFNetworking.m in Sources */,
+				578DC93F1B1460250060D4CF /* GPSub_page.m in Sources */,
 				5786A63D1B1348100016C30F /* NSObject+MJCoding.m in Sources */,
 				57A0805E1B12A88B006DE5AB /* GPNewsViewController.m in Sources */,
 				5786A63B1B1348100016C30F /* MJProperty.m in Sources */,
@@ -800,6 +817,7 @@
 				57C7B39B1B13FEFB00A74EA4 /* NSData+SDDataCache.m in Sources */,
 				5786A6561B1348290016C30F /* AFHTTPRequestOperationManager.m in Sources */,
 				5786A60C1B1323B10016C30F /* GPMyFavoController.m in Sources */,
+				578DC9391B145E840060D4CF /* GPNewDetail.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

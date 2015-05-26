@@ -7,7 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
-
+@class GPNew;
 @interface GPNewDetailController : UIViewController
-
+@property (nonatomic,strong)GPNew * myNew;
 @end
