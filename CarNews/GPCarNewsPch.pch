@@ -16,4 +16,10 @@
 #import "UIImage+GPImageRendering.h"
 #define GP_SCREEN_W  [UIScreen mainScreen].bounds.size.width
 #define GP_SCREEN_H  [UIScreen mainScreen].bounds.size.height
+
+/**
+ *  资讯的接口
+ */
+#define GP_NEWS_NEW @"http://mobile.auto.sohu.com/mcms/external/getNews.at"
+#define GP_NEWS_SCROLLVIEW @"http://mobile.auto.sohu.com/mcms/external/getFocusNews.at"
 #endif

@@ -13,8 +13,10 @@
 #import "GPNew.h"
 #import "GPNewsCell.h"
 #import "GPNewsHeaderView.h"
+#import "MBProgressHUD+NJ.h"
 @interface GPNewsViewController ()
 @property (nonatomic,strong)GPNews * news;
+//@property (nonatomic,weak)GPNewsHeaderView * newsHeaderView;
 @end
 
 @implementation GPNewsViewController
@@ -24,41 +26,69 @@
     [super viewDidLoad];
     
     self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc]initWithImage:[UIImage imageNamed:@"search"] style:UIBarButtonItemStylePlain target:self action:@selector(search)];
+   
     self.view.backgroundColor = [UIColor whiteColor];
     
-
-    GPNewsHeaderView * newsHeaderView = [GPNewsHeaderView newsHeaderView];
     
     AFHTTPRequestOperationManager * manager = [AFHTTPRequestOperationManager manager];
     
-    NSDictionary * parameters = @{@"newsType":@"11"};
-    
-    [manager GET:@"http://mobile.auto.sohu.com/mcms/external/getFocusNews.at" parameters:parameters success:^(AFHTTPRequestOperation *operation, id responseObject) {
+    [manager GET:GP_NEWS_SCROLLVIEW parameters:@{@"newsType":@"11"} success:^(AFHTTPRequestOperation *operation, id responseObject) {
         
         GPNews * news = [GPNews objectWithKeyValues:responseObject];
+        
+        GPNewsHeaderView * newsHeaderView = [GPNewsHeaderView newsHeaderView];
         
         newsHeaderView.news = news;
         
         self.tableView.tableHeaderView = newsHeaderView;
         
+        
+        
     } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
-        GPLog(@"失败");
+        
+        [MBProgressHUD showError:@"请检查网络链接"];
+        
     }];
+
+    
+    //[self sendRequestScrollViewWith:GP_NEWS_SCROLLVIEW AndParameters:@{@"newsType":@"11"}];
     
     
-    [self sendRequest];
+    [self sendRequestWith:GP_NEWS_NEW AndParameters: @{@"pageSize":@20,@"newsType":@11}];
 }
 
-- (void)sendRequest
+- (void)sendRequestScrollViewWith:(NSString*)urlStr AndParameters:(NSDictionary *)parameters
 {
     AFHTTPRequestOperationManager * manager = [AFHTTPRequestOperationManager manager];
-    /**
-     *  这个参数是具体的访问项
-     */
-    NSDictionary * parameters = @{@"pageSize":@20,@"newsType":@11};
     
-    [manager GET:@"http://mobile.auto.sohu.com/mcms/external/getNews.at" parameters:parameters success:^(AFHTTPRequestOperation *operation, id responseObject) {
+    [manager GET:urlStr parameters:parameters success:^(AFHTTPRequestOperation *operation, id responseObject) {
         
+        GPNews * news = [GPNews objectWithKeyValues:responseObject];
+        
+        GPNewsHeaderView * newsHeaderView = [GPNewsHeaderView newsHeaderView];
+        
+        newsHeaderView.news = news;
+        
+        self.tableView.tableHeaderView = newsHeaderView;
+        
+       
+        
+    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+        
+        [MBProgressHUD showError:@"请检查网络链接"];
+        
+    }];
+}
+/**
+ *  给新闻服务器发送请求
+ *
+ *  @param urlStr     接口地址
+ *  @param parameters 接口参数
+ */
+- (void)sendRequestWith:(NSString*)urlStr AndParameters:(NSDictionary *)parameters
+{
+    AFHTTPRequestOperationManager * manager = [AFHTTPRequestOperationManager manager];
+    [manager GET:urlStr parameters:parameters success:^(AFHTTPRequestOperation *operation, id responseObject) {
         GPNews * news = [GPNews objectWithKeyValues:responseObject];
         
         self.news = news;
@@ -66,9 +96,9 @@
         [self.tableView reloadData];
         
     } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
-    
-        GPLog(@"失败");
+        [MBProgressHUD showError:@"请检查网络链接"];
     }];
+    
 }
 
 /**

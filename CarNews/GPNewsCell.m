@@ -45,7 +45,9 @@
     self.title.text = myNew.title;
     NSURL * url = [NSURL URLWithString:myNew.header_img_url];
     [self.iconImage setImageWithURL:url];
-    self.createTime.text = myNew.createTime;
+    NSRange range = {5,5};
+    NSString * createTime = [myNew.createTime substringWithRange:range];
+    self.createTime.text = createTime;
     
     self.commentCount.text = myNew.commentCount;
     
