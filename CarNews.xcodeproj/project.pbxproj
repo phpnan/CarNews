@@ -69,6 +69,15 @@
 		57A080921B12E6ED006DE5AB /* MBProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = 57A0808F1B12E6ED006DE5AB /* MBProgressHUD.m */; };
 		57A080961B12F15B006DE5AB /* GPLoginController.m in Sources */ = {isa = PBXBuildFile; fileRef = 57A080941B12F15B006DE5AB /* GPLoginController.m */; };
 		57A080971B12F15B006DE5AB /* GPLoginController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 57A080951B12F15B006DE5AB /* GPLoginController.xib */; };
+		57C7B39B1B13FEFB00A74EA4 /* NSData+SDDataCache.m in Sources */ = {isa = PBXBuildFile; fileRef = 57C7B38B1B13FEFB00A74EA4 /* NSData+SDDataCache.m */; };
+		57C7B39C1B13FEFB00A74EA4 /* TAAbstractDotView.m in Sources */ = {isa = PBXBuildFile; fileRef = 57C7B38E1B13FEFB00A74EA4 /* TAAbstractDotView.m */; };
+		57C7B39D1B13FEFB00A74EA4 /* TAAnimatedDotView.m in Sources */ = {isa = PBXBuildFile; fileRef = 57C7B3901B13FEFB00A74EA4 /* TAAnimatedDotView.m */; };
+		57C7B39E1B13FEFB00A74EA4 /* TADotView.m in Sources */ = {isa = PBXBuildFile; fileRef = 57C7B3921B13FEFB00A74EA4 /* TADotView.m */; };
+		57C7B39F1B13FEFB00A74EA4 /* TAPageControl.m in Sources */ = {isa = PBXBuildFile; fileRef = 57C7B3941B13FEFB00A74EA4 /* TAPageControl.m */; };
+		57C7B3A01B13FEFB00A74EA4 /* SDCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 57C7B3961B13FEFB00A74EA4 /* SDCollectionViewCell.m */; };
+		57C7B3A11B13FEFB00A74EA4 /* SDCycleScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = 57C7B3981B13FEFB00A74EA4 /* SDCycleScrollView.m */; };
+		57C7B3A21B13FEFB00A74EA4 /* UIView+SDExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = 57C7B39A1B13FEFB00A74EA4 /* UIView+SDExtension.m */; };
+		57C7B3A81B1400D800A74EA4 /* GPNewsHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 57C7B3A71B1400D800A74EA4 /* GPNewsHeaderView.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -203,6 +212,24 @@
 		57A080931B12F15B006DE5AB /* GPLoginController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GPLoginController.h; sourceTree = "<group>"; };
 		57A080941B12F15B006DE5AB /* GPLoginController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GPLoginController.m; sourceTree = "<group>"; };
 		57A080951B12F15B006DE5AB /* GPLoginController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = GPLoginController.xib; sourceTree = "<group>"; };
+		57C7B38A1B13FEFB00A74EA4 /* NSData+SDDataCache.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSData+SDDataCache.h"; sourceTree = "<group>"; };
+		57C7B38B1B13FEFB00A74EA4 /* NSData+SDDataCache.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSData+SDDataCache.m"; sourceTree = "<group>"; };
+		57C7B38D1B13FEFB00A74EA4 /* TAAbstractDotView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TAAbstractDotView.h; sourceTree = "<group>"; };
+		57C7B38E1B13FEFB00A74EA4 /* TAAbstractDotView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TAAbstractDotView.m; sourceTree = "<group>"; };
+		57C7B38F1B13FEFB00A74EA4 /* TAAnimatedDotView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TAAnimatedDotView.h; sourceTree = "<group>"; };
+		57C7B3901B13FEFB00A74EA4 /* TAAnimatedDotView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TAAnimatedDotView.m; sourceTree = "<group>"; };
+		57C7B3911B13FEFB00A74EA4 /* TADotView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TADotView.h; sourceTree = "<group>"; };
+		57C7B3921B13FEFB00A74EA4 /* TADotView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TADotView.m; sourceTree = "<group>"; };
+		57C7B3931B13FEFB00A74EA4 /* TAPageControl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TAPageControl.h; sourceTree = "<group>"; };
+		57C7B3941B13FEFB00A74EA4 /* TAPageControl.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TAPageControl.m; sourceTree = "<group>"; };
+		57C7B3951B13FEFB00A74EA4 /* SDCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SDCollectionViewCell.h; sourceTree = "<group>"; };
+		57C7B3961B13FEFB00A74EA4 /* SDCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SDCollectionViewCell.m; sourceTree = "<group>"; };
+		57C7B3971B13FEFB00A74EA4 /* SDCycleScrollView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SDCycleScrollView.h; sourceTree = "<group>"; };
+		57C7B3981B13FEFB00A74EA4 /* SDCycleScrollView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SDCycleScrollView.m; sourceTree = "<group>"; };
+		57C7B3991B13FEFB00A74EA4 /* UIView+SDExtension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+SDExtension.h"; sourceTree = "<group>"; };
+		57C7B39A1B13FEFB00A74EA4 /* UIView+SDExtension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+SDExtension.m"; sourceTree = "<group>"; };
+		57C7B3A61B1400D800A74EA4 /* GPNewsHeaderView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GPNewsHeaderView.h; sourceTree = "<group>"; };
+		57C7B3A71B1400D800A74EA4 /* GPNewsHeaderView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GPNewsHeaderView.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -256,6 +283,8 @@
 				5786A6811B134E6D0016C30F /* GPNewsCell.h */,
 				5786A6821B134E6D0016C30F /* GPNewsCell.m */,
 				5786A6831B134E6D0016C30F /* GPNewsCell.xib */,
+				57C7B3A61B1400D800A74EA4 /* GPNewsHeaderView.h */,
+				57C7B3A71B1400D800A74EA4 /* GPNewsHeaderView.m */,
 			);
 			name = Views;
 			sourceTree = "<group>";
@@ -538,6 +567,7 @@
 		57A080891B12E6E0006DE5AB /* libs */ = {
 			isa = PBXGroup;
 			children = (
+				57C7B3881B13FEFB00A74EA4 /* SDCycleScrollView */,
 				5786A65E1B1348520016C30F /* UIKit+AFNetworking */,
 				5786A6411B1348290016C30F /* AFNetworking */,
 				5786A6271B1348100016C30F /* MJExtension */,
@@ -556,6 +586,45 @@
 				57A0808F1B12E6ED006DE5AB /* MBProgressHUD.m */,
 			);
 			path = MBProgressHUD;
+			sourceTree = "<group>";
+		};
+		57C7B3881B13FEFB00A74EA4 /* SDCycleScrollView */ = {
+			isa = PBXGroup;
+			children = (
+				57C7B3891B13FEFB00A74EA4 /* SDCycleScrollView */,
+			);
+			path = SDCycleScrollView;
+			sourceTree = "<group>";
+		};
+		57C7B3891B13FEFB00A74EA4 /* SDCycleScrollView */ = {
+			isa = PBXGroup;
+			children = (
+				57C7B38A1B13FEFB00A74EA4 /* NSData+SDDataCache.h */,
+				57C7B38B1B13FEFB00A74EA4 /* NSData+SDDataCache.m */,
+				57C7B38C1B13FEFB00A74EA4 /* PageControl */,
+				57C7B3951B13FEFB00A74EA4 /* SDCollectionViewCell.h */,
+				57C7B3961B13FEFB00A74EA4 /* SDCollectionViewCell.m */,
+				57C7B3971B13FEFB00A74EA4 /* SDCycleScrollView.h */,
+				57C7B3981B13FEFB00A74EA4 /* SDCycleScrollView.m */,
+				57C7B3991B13FEFB00A74EA4 /* UIView+SDExtension.h */,
+				57C7B39A1B13FEFB00A74EA4 /* UIView+SDExtension.m */,
+			);
+			path = SDCycleScrollView;
+			sourceTree = "<group>";
+		};
+		57C7B38C1B13FEFB00A74EA4 /* PageControl */ = {
+			isa = PBXGroup;
+			children = (
+				57C7B38D1B13FEFB00A74EA4 /* TAAbstractDotView.h */,
+				57C7B38E1B13FEFB00A74EA4 /* TAAbstractDotView.m */,
+				57C7B38F1B13FEFB00A74EA4 /* TAAnimatedDotView.h */,
+				57C7B3901B13FEFB00A74EA4 /* TAAnimatedDotView.m */,
+				57C7B3911B13FEFB00A74EA4 /* TADotView.h */,
+				57C7B3921B13FEFB00A74EA4 /* TADotView.m */,
+				57C7B3931B13FEFB00A74EA4 /* TAPageControl.h */,
+				57C7B3941B13FEFB00A74EA4 /* TAPageControl.m */,
+			);
+			path = PageControl;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -672,11 +741,13 @@
 				5786A6221B1343600016C30F /* NSArray+Ext.m in Sources */,
 				5786A6721B1348520016C30F /* UIAlertView+AFNetworking.m in Sources */,
 				5786A6741B1348520016C30F /* UIImageView+AFNetworking.m in Sources */,
+				57C7B3A81B1400D800A74EA4 /* GPNewsHeaderView.m in Sources */,
 				5786A65A1B1348290016C30F /* AFURLConnectionOperation.m in Sources */,
 				5786A63C1B1348100016C30F /* MJType.m in Sources */,
 				5786A65D1B1348290016C30F /* AFURLSessionManager.m in Sources */,
 				5786A6841B134E6D0016C30F /* GPNewsCell.m in Sources */,
 				5786A65B1B1348290016C30F /* AFURLRequestSerialization.m in Sources */,
+				57C7B39C1B13FEFB00A74EA4 /* TAAbstractDotView.m in Sources */,
 				5786A6391B1348100016C30F /* MJConst.m in Sources */,
 				57A080831B12CA2E006DE5AB /* GPSpaceHeaderView.m in Sources */,
 				5786A6731B1348520016C30F /* UIButton+AFNetworking.m in Sources */,
@@ -688,12 +759,15 @@
 				5786A6581B1348290016C30F /* AFNetworkReachabilityManager.m in Sources */,
 				5786A65C1B1348290016C30F /* AFURLResponseSerialization.m in Sources */,
 				57A080881B12D02D006DE5AB /* GPSettingController.m in Sources */,
+				57C7B3A01B13FEFB00A74EA4 /* SDCollectionViewCell.m in Sources */,
 				57A080901B12E6ED006DE5AB /* MBProgressHUD+NJ.m in Sources */,
 				5786A6571B1348290016C30F /* AFHTTPSessionManager.m in Sources */,
 				57A080921B12E6ED006DE5AB /* MBProgressHUD.m in Sources */,
 				57A080301B12A7E7006DE5AB /* AppDelegate.m in Sources */,
+				57C7B39E1B13FEFB00A74EA4 /* TADotView.m in Sources */,
 				57A0806E1B12AE9A006DE5AB /* GPSettingCell.m in Sources */,
 				5786A63F1B1348100016C30F /* NSObject+MJProperty.m in Sources */,
+				57C7B39F1B13FEFB00A74EA4 /* TAPageControl.m in Sources */,
 				57A0805D1B12A88B006DE5AB /* GPMySpaceViewController.m in Sources */,
 				57A0805B1B12A88B006DE5AB /* GPBaseTabController.m in Sources */,
 				57A0807F1B12C74A006DE5AB /* GPBaseSettingController.m in Sources */,
@@ -703,9 +777,12 @@
 				57A080601B12A88B006DE5AB /* GPSelectCarViewController.m in Sources */,
 				5786A6551B1348290016C30F /* AFHTTPRequestOperation.m in Sources */,
 				5786A6231B1343600016C30F /* NSDictionary+Ext.m in Sources */,
+				57C7B3A21B13FEFB00A74EA4 /* UIView+SDExtension.m in Sources */,
 				57A0802D1B12A7E7006DE5AB /* main.m in Sources */,
 				57A080751B12B7E4006DE5AB /* GPSettingGroup.m in Sources */,
+				57C7B3A11B13FEFB00A74EA4 /* SDCycleScrollView.m in Sources */,
 				5786A6771B1348520016C30F /* UIWebView+AFNetworking.m in Sources */,
+				57C7B39D1B13FEFB00A74EA4 /* TAAnimatedDotView.m in Sources */,
 				5786A6711B1348520016C30F /* UIActivityIndicatorView+AFNetworking.m in Sources */,
 				5786A63D1B1348100016C30F /* NSObject+MJCoding.m in Sources */,
 				57A0805E1B12A88B006DE5AB /* GPNewsViewController.m in Sources */,
@@ -714,6 +791,7 @@
 				5786A6161B1337E30016C30F /* GPSwitchCityController.m in Sources */,
 				57A080611B12A88B006DE5AB /* UIImage+GPImageRendering.m in Sources */,
 				5786A63E1B1348100016C30F /* NSObject+MJKeyValue.m in Sources */,
+				57C7B39B1B13FEFB00A74EA4 /* NSData+SDDataCache.m in Sources */,
 				5786A6561B1348290016C30F /* AFHTTPRequestOperationManager.m in Sources */,
 				5786A60C1B1323B10016C30F /* GPMyFavoController.m in Sources */,
 			);

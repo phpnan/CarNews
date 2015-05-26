@@ -12,6 +12,7 @@
 #import "GPNews.h"
 #import "GPNew.h"
 #import "GPNewsCell.h"
+#import "GPNewsHeaderView.h"
 @interface GPNewsViewController ()
 @property (nonatomic,strong)GPNews * news;
 @end
@@ -25,7 +26,25 @@
     self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc]initWithImage:[UIImage imageNamed:@"search"] style:UIBarButtonItemStylePlain target:self action:@selector(search)];
     self.view.backgroundColor = [UIColor whiteColor];
     
-#warning 写到这里,在这里添加轮播的图片,也就是设置tableViewHeaderView
+
+    GPNewsHeaderView * newsHeaderView = [GPNewsHeaderView newsHeaderView];
+    
+    AFHTTPRequestOperationManager * manager = [AFHTTPRequestOperationManager manager];
+    
+    NSDictionary * parameters = @{@"newsType":@"11"};
+    
+    [manager GET:@"http://mobile.auto.sohu.com/mcms/external/getFocusNews.at" parameters:parameters success:^(AFHTTPRequestOperation *operation, id responseObject) {
+        
+        GPNews * news = [GPNews objectWithKeyValues:responseObject];
+        
+        newsHeaderView.news = news;
+        
+        self.tableView.tableHeaderView = newsHeaderView;
+        
+    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+        GPLog(@"失败");
+    }];
+    
     
     [self sendRequest];
 }
@@ -33,8 +52,12 @@
 - (void)sendRequest
 {
     AFHTTPRequestOperationManager * manager = [AFHTTPRequestOperationManager manager];
+    /**
+     *  这个参数是具体的访问项
+     */
+    NSDictionary * parameters = @{@"pageSize":@20,@"newsType":@11};
     
-    [manager GET:@"http://mobile.auto.sohu.com/mcms/external/getNews.at?pageSize=20&newsType=11" parameters:nil success:^(AFHTTPRequestOperation *operation, id responseObject) {
+    [manager GET:@"http://mobile.auto.sohu.com/mcms/external/getNews.at" parameters:parameters success:^(AFHTTPRequestOperation *operation, id responseObject) {
         
         GPNews * news = [GPNews objectWithKeyValues:responseObject];
         
@@ -79,6 +102,7 @@
 }
 
 #warning 选中后跳转到下一个界面时的设置,..等待完成
+
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 
 {
