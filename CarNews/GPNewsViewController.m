@@ -26,8 +26,7 @@
 typedef enum
 {
     RequestTypeScrollView,
-    RequestTypeNew,
-    RequestTypeDetail
+    RequestTypeNew
 
 }RequestType;
 
@@ -39,20 +38,13 @@ typedef enum
 /**
  *  这个是详细页面的模型
  */
-@property (nonatomic,strong)GPNewDetail * newsDetail;
+//@property (nonatomic,strong)GPNewDetail * newsDetail;
 
 @end
 
 @implementation GPNewsViewController
 
-- (GPNewDetail*)newsDetail
-{
-    if(_newsDetail == nil)
-    {
-        _newsDetail = [[GPNewDetail alloc]init];
-    }
-    return _newsDetail;
-}
+
 - (GPNews*)news
 {
     if(_news == nil)
@@ -97,7 +89,7 @@ typedef enum
  */
 - (void)refreshStateChange:(UIRefreshControl*)refreshControl
 {
-    
+#warning 刷新时是否要把首页的刷新也加入进来?
     AFHTTPRequestOperationManager * manager = [AFHTTPRequestOperationManager manager];
 
     __unsafe_unretained typeof(self) share = self;
@@ -111,6 +103,7 @@ typedef enum
         [refreshControl endRefreshing];
         
     } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+        
         [refreshControl endRefreshing];
         [MBProgressHUD showError:@"没有网络"];
     }];
@@ -151,14 +144,7 @@ typedef enum
                 
                 share.tableView.tableHeaderView = newsHeaderView;
                 break;
-            case RequestTypeDetail:
-                /**
-                 *  给将要推出的详情界面传送数据
-                 */
-                share.newsDetail = [GPNewDetail objectWithKeyValues:responseObject];
-                GPLog(@"");
-                
-                break;
+
             default:
                 break;
         }
@@ -212,16 +198,14 @@ typedef enum
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
     
     GPNew * myNew = self.news.RESULT[indexPath.row];
- 
-    [self sendRequestWith:GP_NEWS_DETAIL andParameters:@{@"articleId":   myNew.ID} andRequestType:RequestTypeDetail];
-    
-    /**
-     *  点击这个tableViewCell之后会去访问一个detail的json,然后提供给下一个控制器解析的html的地址
-     */
-    
+
     GPNewDetailController * newDetailController = [[GPNewDetailController alloc]init];
     
     newDetailController.view.backgroundColor = [UIColor whiteColor];
+    
+    newDetailController.myNew = myNew;
+    
+    newDetailController.title = @"最新";
     
     [self.navigationController showViewController:newDetailController sender:nil];
     
