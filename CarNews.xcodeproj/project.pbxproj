@@ -78,6 +78,7 @@
 		57C7B3A11B13FEFB00A74EA4 /* SDCycleScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = 57C7B3981B13FEFB00A74EA4 /* SDCycleScrollView.m */; };
 		57C7B3A21B13FEFB00A74EA4 /* UIView+SDExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = 57C7B39A1B13FEFB00A74EA4 /* UIView+SDExtension.m */; };
 		57C7B3A81B1400D800A74EA4 /* GPNewsHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 57C7B3A71B1400D800A74EA4 /* GPNewsHeaderView.m */; };
+		57C7B3AB1B141B5700A74EA4 /* GPNewDetailController.m in Sources */ = {isa = PBXBuildFile; fileRef = 57C7B3AA1B141B5700A74EA4 /* GPNewDetailController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -230,6 +231,8 @@
 		57C7B39A1B13FEFB00A74EA4 /* UIView+SDExtension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+SDExtension.m"; sourceTree = "<group>"; };
 		57C7B3A61B1400D800A74EA4 /* GPNewsHeaderView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GPNewsHeaderView.h; sourceTree = "<group>"; };
 		57C7B3A71B1400D800A74EA4 /* GPNewsHeaderView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GPNewsHeaderView.m; sourceTree = "<group>"; };
+		57C7B3A91B141B5700A74EA4 /* GPNewDetailController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GPNewDetailController.h; sourceTree = "<group>"; };
+		57C7B3AA1B141B5700A74EA4 /* GPNewDetailController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GPNewDetailController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -273,6 +276,8 @@
 			children = (
 				57A080521B12A88B006DE5AB /* GPNewsViewController.h */,
 				57A080531B12A88B006DE5AB /* GPNewsViewController.m */,
+				57C7B3A91B141B5700A74EA4 /* GPNewDetailController.h */,
+				57C7B3AA1B141B5700A74EA4 /* GPNewDetailController.m */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -791,6 +796,7 @@
 				5786A6161B1337E30016C30F /* GPSwitchCityController.m in Sources */,
 				57A080611B12A88B006DE5AB /* UIImage+GPImageRendering.m in Sources */,
 				5786A63E1B1348100016C30F /* NSObject+MJKeyValue.m in Sources */,
+				57C7B3AB1B141B5700A74EA4 /* GPNewDetailController.m in Sources */,
 				57C7B39B1B13FEFB00A74EA4 /* NSData+SDDataCache.m in Sources */,
 				5786A6561B1348290016C30F /* AFHTTPRequestOperationManager.m in Sources */,
 				5786A60C1B1323B10016C30F /* GPMyFavoController.m in Sources */,

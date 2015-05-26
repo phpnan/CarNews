@@ -10,7 +10,7 @@
 #import "SDCycleScrollView.h"
 #import "GPNews.h"
 #import "GPNew.h"
-@interface GPNewsHeaderView()
+@interface GPNewsHeaderView()<SDCycleScrollViewDelegate>
 @property (nonatomic,weak)SDCycleScrollView * cycleScrollView;
 @end
 @implementation GPNewsHeaderView
@@ -55,6 +55,8 @@
     self.cycleScrollView.imageURLsGroup = urlArray;
     
     self.cycleScrollView.titlesGroup = titleArray;
+    
+    self.cycleScrollView.delegate = self;
 }
 /**
  *  设置cycleScrollView的frame
@@ -69,6 +71,13 @@
 - (void)willMoveToSuperview:(UIView *)newSuperview
 {
     self.frame = CGRectMake(0, 0, GP_SCREEN_W, 200);
+}
+/**
+ *  当选中滚动的scrollView的时的方法
+ */
+- (void)cycleScrollView:(SDCycleScrollView *)cycleScrollView didSelectItemAtIndex:(NSInteger)index
+{
+    GPLog(@"%zi",index);
 }
 
 
