@@ -14,7 +14,7 @@
 #import "GPNew.h"
 #import "MJExtension.h"
 #import "MBProgressHUD+NJ.h"
-@interface GPNewDetailController ()
+@interface GPNewDetailController ()<UIWebViewDelegate>
 @property (nonatomic,strong)GPNewDetail * newsDetail;
 @end
 
@@ -32,43 +32,73 @@
 {
     self.view = [[UIWebView alloc]init];
 }
-- (void)viewDidLoad {
+- (void)viewDidLoad
+{
     
     [super viewDidLoad];
+    self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc]initWithTitle:@"刷新" style:UIBarButtonItemStylePlain target:self action:@selector(refreshWebView)];
     
 }
+
+- (void)refreshWebView
+{
+    [self sendURLRequest];
+}
+
+
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
-
+- (void)dealloc
+{
+    NSLog(@"我被释放啦!");
+}
 - (void)setMyNew:(GPNew *)myNew
 {
     _myNew = myNew;
+    
+    [self sendURLRequest];
+}
+
+- (void)sendURLRequest
+{
     AFHTTPRequestOperationManager * manager = [AFHTTPRequestOperationManager manager];
-    __unsafe_unretained typeof(self) share = self;
-    [manager GET:GP_NEWS_DETAIL parameters:@{@"articleId":myNew.ID} success:^(AFHTTPRequestOperation *operation, id responseObject) {
+    [MBProgressHUD showMessage:@"加载中"];
+    
+    [manager GET:GP_NEWS_DETAIL parameters:@{@"articleId":self.myNew.ID} success:^(AFHTTPRequestOperation *operation, id responseObject) {
         
-        share.newsDetail = [GPNewDetail objectWithKeyValues:responseObject];
+        self.newsDetail = [GPNewDetail objectWithKeyValues:responseObject];
         
-        UIWebView * webView = (UIWebView*)share.view;
+        UIWebView * webView = (UIWebView*)self.view;
         
-        NSLog(@"%@",[share.newsDetail.RESULT.sub_pages[0]url]);
+        webView.delegate = self;
         
-        NSString * urlStr = [NSString stringWithFormat:@"%@",[share.newsDetail.RESULT.sub_pages[0]url]];
-        
-        NSLog(@"%@",urlStr);
+        NSString * urlStr = [NSString stringWithFormat:@"%@",[self.newsDetail.RESULT.sub_pages[0]url]];
         
         NSURL * url = [NSURL URLWithString:urlStr];
         
         NSURLRequest * request = [NSURLRequest requestWithURL:url];
-        
+       
         [webView loadRequest:request];
-
+        
     } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+        
         [MBProgressHUD showError:@"网络链接失败"];
     }];
+    
 }
 
+- (void)webViewDidFinishLoad:(UIWebView *)webView
+{
+    [MBProgressHUD hideHUD];
+    [MBProgressHUD showSuccess:@"加载完毕"];
+}
+- (void)webView:(UIWebView *)webView didFailLoadWithError:(NSError *)error
+{
+    [MBProgressHUD hideHUD];
+    [MBProgressHUD showError:@"网络连接失败"];
+    
+}
 @end

@@ -77,7 +77,7 @@
  */
 - (void)cycleScrollView:(SDCycleScrollView *)cycleScrollView didSelectItemAtIndex:(NSInteger)index
 {
-    GPLog(@"%zi",index);
+    GPLog(@"点击了具体的scrollView%zi",index);
 }
 
 

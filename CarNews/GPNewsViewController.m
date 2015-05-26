@@ -61,14 +61,8 @@ typedef enum
    
     self.view.backgroundColor = [UIColor whiteColor];
     
-
-    [self sendRequestWith:GP_NEWS_NEW andParameters:@{@"pageSize":@20,@"newsType":@11} andRequestType:RequestTypeNew];
-    
-    [self sendRequestWith:GP_NEWS_SCROLLVIEW andParameters:@{@"newsType":@"11"} andRequestType:RequestTypeScrollView];
-    /**
-     刷新空间
-     */
     [self setUpRefreshControl];
+    
    
 }
 /**
@@ -81,6 +75,10 @@ typedef enum
     [self.tableView addSubview:refreshControl];
     
     [refreshControl addTarget:self action:@selector(refreshStateChange:) forControlEvents:UIControlEventValueChanged];
+    /**
+     *  第一次主动刷新
+     */
+    [self refreshStateChange:refreshControl];
 }
 
 /**
@@ -89,16 +87,14 @@ typedef enum
  */
 - (void)refreshStateChange:(UIRefreshControl*)refreshControl
 {
-#warning 刷新时是否要把首页的刷新也加入进来?
+    
     AFHTTPRequestOperationManager * manager = [AFHTTPRequestOperationManager manager];
 
-    __unsafe_unretained typeof(self) share = self;
-    
     [manager GET:GP_NEWS_NEW parameters:@{@"pageSize":@20,@"newsType":@11} success:^(AFHTTPRequestOperation *operation, id responseObject) {
         
-        share.news = [GPNews objectWithKeyValues:responseObject];
+        self.news = [GPNews objectWithKeyValues:responseObject];
         
-        [share.tableView reloadData];
+        [self.tableView reloadData];
         
         [refreshControl endRefreshing];
         
@@ -107,6 +103,21 @@ typedef enum
         [refreshControl endRefreshing];
         [MBProgressHUD showError:@"没有网络"];
     }];
+    
+    [manager GET:GP_NEWS_SCROLLVIEW parameters:@{@"newsType":@"11"} success:^(AFHTTPRequestOperation *operation, id responseObject) {
+        
+        GPNewsHeaderView * newsHeaderView = [GPNewsHeaderView newsHeaderView];
+        
+        self.news = [GPNews objectWithKeyValues:responseObject];
+        
+        newsHeaderView.news = self.news;
+        
+        self.tableView.tableHeaderView = newsHeaderView;
+
+    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+        
+    }];
+    
 }
 
 /**
@@ -120,7 +131,7 @@ typedef enum
 - (void)sendRequestWith:(NSString*)urlStr andParameters:(NSDictionary*)params andRequestType:(RequestType)requestType
 {
     AFHTTPRequestOperationManager * manager = [AFHTTPRequestOperationManager manager];
-    __unsafe_unretained typeof(self) share = self;
+   
     [manager GET:urlStr parameters:params success:^(AFHTTPRequestOperation *operation, id responseObject) {
         
         GPNewsHeaderView * newsHeaderView = [GPNewsHeaderView newsHeaderView];
@@ -130,8 +141,8 @@ typedef enum
                  *  读取的是首页新闻的模型数据
                  */
             case RequestTypeNew:
-                share.news = [GPNews objectWithKeyValues:responseObject];
-                [share.tableView reloadData];
+                self.news = [GPNews objectWithKeyValues:responseObject];
+                [self.tableView reloadData];
                 
                 break;
                 
@@ -139,10 +150,11 @@ typedef enum
                 /**
                  *  首页滚动栏和首页新闻的模型一样,所以也这么读取
                  */
-                share.news = [GPNews objectWithKeyValues:responseObject];
-                newsHeaderView.news = share.news;
+                self.news = [GPNews objectWithKeyValues:responseObject];
+                newsHeaderView.news = self.news;
                 
-                share.tableView.tableHeaderView = newsHeaderView;
+                self.tableView.tableHeaderView = newsHeaderView;
+                
                 break;
 
             default:
@@ -180,7 +192,10 @@ typedef enum
     /**
      *  将取好的模型传递给定义好的cell对象
      */
-    cell.myNew = myNew;
+    
+     cell.myNew = myNew;
+    
+   
     
     return cell;
 }
@@ -189,8 +204,6 @@ typedef enum
 {
     return 150;
 }
-
-#warning 选中后跳转到下一个界面时的设置,..等待完成
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 
@@ -206,6 +219,7 @@ typedef enum
     newDetailController.myNew = myNew;
     
     newDetailController.title = @"最新";
+    
     
     [self.navigationController showViewController:newDetailController sender:nil];
     

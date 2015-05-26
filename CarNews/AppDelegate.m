@@ -5,7 +5,7 @@
 //  Created by chengxun on 15/5/25.
 //  Copyright (c) 2015年 chengxun. All rights reserved.
 //
-
+#import "AFNetworking.h"
 #import "AppDelegate.h"
 #import "GPBaseTabController.h"
 @interface AppDelegate ()
@@ -19,6 +19,28 @@
     self.window = [[UIWindow alloc]initWithFrame:[UIScreen mainScreen].bounds];
     GPBaseTabController * baseTabController = [[GPBaseTabController alloc]init];
     self.window.rootViewController = baseTabController;
+    
+    /**
+     *  网络检测设置
+     */
+    AFNetworkReachabilityManager * manager = [AFNetworkReachabilityManager sharedManager];
+    [manager setReachabilityStatusChangeBlock:^(AFNetworkReachabilityStatus status) {
+        switch (status) {
+            case AFNetworkReachabilityStatusUnknown:
+            case AFNetworkReachabilityStatusNotReachable:
+                GPLog(@"没有网络");
+                break;
+            case AFNetworkReachabilityStatusReachableViaWiFi:
+                GPLog(@"WIFI网络");
+                break;
+            case AFNetworkReachabilityStatusReachableViaWWAN:
+                GPLog(@"手机自带网络");
+                break;
+        }
+    }];
+    
+    [manager startMonitoring];
+    
     [self.window makeKeyAndVisible];
     return YES;
 }
