@@ -26,7 +26,8 @@
 typedef enum
 {
     RequestTypeScrollView,
-    RequestTypeNew
+    RequestTypeNew,
+    RequestTypeRefresh
 
 }RequestType;
 
@@ -147,7 +148,7 @@ typedef enum
  */
 - (void)refresh
 {
-    [self sendRequestWith:GP_NEWS_NEW andParameters:@{@"pageSize":@20,@"newsType":@11} andRequestType:RequestTypeNew];
+    [self sendRequestWith:GP_NEWS_NEW andParameters:@{@"pageSize":@20,@"newsType":@11} andRequestType:RequestTypeRefresh];
     
     
     [self sendRequestWith:GP_NEWS_SCROLLVIEW andParameters:@{@"newsType":@"11"} andRequestType:RequestTypeScrollView];
@@ -180,13 +181,13 @@ typedef enum
                 /**
                  *  判断上啦加载更多的firstID和原来数组中的firstID是否相同,如果不相同,才添加
                  */
-               if(![[[self.news.RESULT firstObject]ID] isEqualToString: [[self.resultArray firstObject]ID]])
-               {
+//               if(![[[self.news.RESULT firstObject]ID] isEqualToString: [[self.resultArray firstObject]ID]])
+//               {
                    for(GPNew * mynew in self.news.RESULT)
                    {
                        [self.resultArray addObject:mynew];
                    }
-               }
+               
                 
                 [self.tableView reloadData];
                 
@@ -203,6 +204,31 @@ typedef enum
                 self.tableView.tableHeaderView = newsHeaderView;
                 
                 break;
+                
+            case RequestTypeRefresh:
+                
+                self.news = [GPNews objectWithKeyValues:responseObject];
+               
+                if(![[[self.news.RESULT firstObject]ID] isEqualToString: [[self.resultArray firstObject]ID]])
+                {
+                    NSMutableArray * tmp = [NSMutableArray array];
+                    /**
+                     *  将新得到数据插入原来的数组中
+                     */
+                    for(GPNew * myNew in self.news.RESULT)
+                    {
+                        [tmp addObject:myNew];
+                       
+                    }
+                    
+                    NSRange range = {0,self.news.RESULT.count};
+                    
+                    NSIndexSet * indexSet = [NSIndexSet indexSetWithIndexesInRange:range];
+                    
+                    [self.resultArray insertObjects:tmp atIndexes:indexSet];
+                    
+                    [self.tableView reloadData];
+                }
 
             default:
                 break;
