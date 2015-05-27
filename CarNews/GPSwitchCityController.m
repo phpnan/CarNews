@@ -7,7 +7,8 @@
 //
 
 #import "GPSwitchCityController.h"
-
+#import "GPCity.h"
+#import "GPArrowItem.h"
 @interface GPSwitchCityController ()
 @property (nonatomic,strong)NSArray * citiesArray;
 @end
@@ -19,20 +20,23 @@
 {
     if(_citiesArray == nil)
     {
-        NSData * data = [NSData dataWithContentsOfFile:[[NSBundle mainBundle]pathForResource:@"city.json" ofType:nil]];
-        
-        NSDictionary * dict = [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingMutableContainers error:nil];
-        
-        NSArray * objs = dict[@"城市代码"];
-#warning 从城市的json数据中建立模型,现在只是将json数据取到,还没有转化成模型
-    
+        NSMutableArray * objs = [NSMutableArray array];
+        NSString * path = [[NSBundle mainBundle]pathForResource:@"cityList.plist" ofType:nil
+         ];
+        NSDictionary * dict = [NSDictionary dictionaryWithContentsOfFile:path];
+        NSArray * array = dict[@"cities"];
+        for(NSDictionary * dict in array)
+        {
+            GPCity * city = [GPCity cityWithDict:dict];
+            [objs addObject:city];
+        }
+        _citiesArray = objs;
     }
     return _citiesArray;
 }
 - (void)viewDidLoad {
     
     [super viewDidLoad];
-    
     
    
     
@@ -41,25 +45,47 @@
 
 #pragma mark - Table view data source
 
-- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
-
-    return 0;
-}
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
 
-    return 0;
+    return self.citiesArray.count;
 }
 
-/*
-- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:<#@"reuseIdentifier"#> forIndexPath:indexPath];
-    
-    // Configure the cell...
-    
+- (UITableViewCell*)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    static NSString * ID = @"city";
+    UITableViewCell * cell = [tableView dequeueReusableCellWithIdentifier:ID];
+    if(cell == nil)
+    {
+        cell = [[UITableViewCell alloc]initWithStyle:UITableViewCellStyleDefault reuseIdentifier:ID];
+    }
+    GPCity * city = self.citiesArray[indexPath.row];
+    cell.textLabel.text = city.name;
     return cell;
 }
-*/
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    GPLog(@"%@",[self.citiesArray[indexPath.row]name]);
+    
+#warning 为什么self.arrowItem.arrowOption是不存在呃?
+    
+    GPArrowItem * arrowItem = self.arrowItem;
+    
+    if(arrowItem.arrowOption)
+    {
+      arrowItem.arrowOption([self.citiesArray[indexPath.row]name]);
+    }
+    //self.arrowItem.arrowOption([self.citiesArray[indexPath.row]name]);
+    [self.navigationController popViewControllerAnimated:YES];
+}
+
+- (void)setArrowItem:(GPArrowItem *)arrowItem
+{
+    _arrowItem = arrowItem;
+}
+
+
 
 /*
 // Override to support conditional editing of the table view.

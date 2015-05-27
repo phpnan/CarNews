@@ -7,7 +7,8 @@
 //
 
 #import <UIKit/UIKit.h>
-
-@interface GPSwitchCityController : UITableViewController
-
+//#import "GPBaseSettingController.h"
+@class GPArrowItem;
+@interface GPSwitchCityController :UITableViewController
+@property (nonatomic,strong)GPArrowItem * arrowItem;
 @end

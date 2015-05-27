@@ -12,6 +12,7 @@
 #import "GPSettingCell.h"
 //#import "GPMyFavoController.h"
 #import "GPArrowItem.h"
+#import "GPSwitchCityController.h"
 @interface GPBaseSettingController ()
 
 @end
@@ -99,10 +100,14 @@
     {
         item.option();
     }
+    
+    
     if([item isKindOfClass:[GPArrowItem class]])
     {
         
         GPArrowItem * arrowItem = (GPArrowItem*)item;
+        
+       
         /**
          *  存在下一个控制器才跳转,也是在这里给下一个控制器穿这个模型的数据
          */
@@ -110,10 +115,34 @@
         {
             UIViewController * controller = [[arrowItem.vcTargetClass alloc]init];
             
+
+            
             controller.title = arrowItem.title;
-            
-            
-            
+#warning 这里的设置是有什么问题?不会回调么?
+            /**
+             *  强行做一个控制器类型判断来传递模型
+             */
+            if([controller isKindOfClass:[GPSwitchCityController class]])
+            {
+                GPSwitchCityController * switchController = (GPSwitchCityController*)controller;
+                switchController.arrowItem = arrowItem;
+                /**
+                 *  这里是想要通过arrowItem的block来设置回传数据更改arrowItem模型中的数据,detail的内容
+                 */
+                if(arrowItem.arrowOption)
+                {
+                    __unsafe_unretained typeof(arrowItem) substitute = arrowItem;
+                    [arrowItem setArrowOption:^(NSString *cityName) {
+                        
+                        substitute.detail = cityName;
+                        /**
+                         *  刷新该行数据
+                         */
+                        [self.tableView reloadRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationLeft];
+                    }];
+                }
+            }
+        
             controller.view.backgroundColor = [UIColor whiteColor];
             
             [self.navigationController pushViewController:controller animated:YES];

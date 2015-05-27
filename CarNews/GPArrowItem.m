@@ -25,4 +25,9 @@
     arrowItem.vcTargetClass = vcTargetClass;
     return arrowItem;
 }
+
+- (void)setArrowOption:(GPArrowItemOption)arrowOption
+{
+    _arrowOption = [arrowOption copy];
+}
 @end

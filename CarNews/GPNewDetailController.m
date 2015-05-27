@@ -14,8 +14,10 @@
 #import "GPNew.h"
 #import "MJExtension.h"
 #import "MBProgressHUD+NJ.h"
+#import "GPDetailFooterView.h"
 @interface GPNewDetailController ()<UIWebViewDelegate>
 @property (nonatomic,strong)GPNewDetail * newsDetail;
+@property (nonatomic,weak)UIWebView * webView;
 @end
 
 @implementation GPNewDetailController
@@ -28,36 +30,63 @@
     }
     return _newsDetail;
 }
-- (void)loadView
-{
-    self.view = [[UIWebView alloc]init];
-}
+//- (void)loadView
+//{
+//    self.view = [[UIWebView alloc]init];
+//}
 - (void)viewDidLoad
 {
     
     [super viewDidLoad];
-    self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc]initWithTitle:@"刷新" style:UIBarButtonItemStylePlain target:self action:@selector(refreshWebView)];
     
-}
+    self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc]initWithTitle:@"刷新" style:UIBarButtonItemStylePlain target:self action:@selector(refreshWebView)];
+    /**
+     这里设置webview的frame,要去除顶部的导航加底部流出空间的位置
+     */
+    UIWebView * webView = [[UIWebView alloc]initWithFrame:CGRectMake(0, 0, GP_SCREEN_W, GP_SCREEN_H-44-64)];
 
+    
+    [self.view addSubview:webView];
+    
+    self.webView = webView;
+    
+    self.webView.delegate = self;
+  
+//    UIView * bottomView = [[UIView alloc]initWithFrame:CGRectMake(0, GP_SCREEN_H-44-64, GP_SCREEN_W, 44)];
+//    
+//    bottomView.backgroundColor = [UIColor redColor];
+    GPDetailFooterView * detailFooterView = [GPDetailFooterView detailFooterView];
+    
+    [self.view addSubview:detailFooterView];
+    
+   
+    GPLog(@"%s",__func__);
+}
+/**
+ *  刷新按钮
+ */
 - (void)refreshWebView
 {
     [self sendURLRequest];
 }
 
 
-
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
-}
 - (void)dealloc
 {
-    NSLog(@"我被释放啦!");
+    /**
+     *  根据文档中的提示,controller释放的时候要讲webView的delegate释放掉
+     */
+    self.webView.delegate = nil;
+    
 }
 - (void)setMyNew:(GPNew *)myNew
 {
     _myNew = myNew;
+    
+    /**
+     *  模型传送过来的时候去加载网络请求
+     */
+    GPLog(@"%s",__func__);
     
     [self sendURLRequest];
 }
@@ -71,9 +100,7 @@
         
         self.newsDetail = [GPNewDetail objectWithKeyValues:responseObject];
         
-        UIWebView * webView = (UIWebView*)self.view;
-        
-        webView.delegate = self;
+     
         
         NSString * urlStr = [NSString stringWithFormat:@"%@",[self.newsDetail.RESULT.sub_pages[0]url]];
         
@@ -81,7 +108,9 @@
         
         NSURLRequest * request = [NSURLRequest requestWithURL:url];
        
-        [webView loadRequest:request];
+        [self.webView loadRequest:request];
+        
+        GPLog(@"%s",__func__);
         
     } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
         
@@ -89,7 +118,11 @@
     }];
     
 }
-
+/**
+ *  webView 的代理方法
+ *
+ *  @param webView <#webView description#>
+ */
 - (void)webViewDidFinishLoad:(UIWebView *)webView
 {
     [MBProgressHUD hideHUD];

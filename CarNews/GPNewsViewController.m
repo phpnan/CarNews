@@ -18,7 +18,7 @@
 #import "GPRESULT.h"
 #import "GPSub_page.h"
 #import "GPNewDetailController.h"
-
+#import "GPRefreshView.h"
 
 /**
  定义请求的种类,不同的请求将对应不同的请求完成后的操作
@@ -35,11 +35,16 @@ typedef enum
  *  这个是用来接收网络上发送来的数组的模型
  */
 @property (nonatomic,strong)GPNews * news;
+
 /**
  *  这个是详细页面的模型
  */
 //@property (nonatomic,strong)GPNewDetail * newsDetail;
 
+@property (nonatomic,assign,getter=isRefresh)BOOL refresh;
+@property (nonatomic,weak)UILabel * refreshLabel;
+
+//@property (nonatomic,weak)GPRefreshView * refreshView;
 @end
 
 @implementation GPNewsViewController
@@ -61,64 +66,63 @@ typedef enum
    
     self.view.backgroundColor = [UIColor whiteColor];
     
-    [self setUpRefreshControl];
+    [self setUpRefreshLabel];
     
+    [self setUpLoadMore];
+    
+    [self refresh];
    
 }
-/**
- *  添加下拉刷新按钮
- */
-- (void)setUpRefreshControl
+
+- (void)setUpLoadMore
 {
-    UIRefreshControl * refreshControl = [[UIRefreshControl alloc]init];
+    UIButton * loadMoreBtn = [UIButton buttonWithType:UIButtonTypeCustom];
     
-    [self.tableView addSubview:refreshControl];
+    loadMoreBtn.frame = CGRectMake(0, 0, GP_SCREEN_W, 44);
     
-    [refreshControl addTarget:self action:@selector(refreshStateChange:) forControlEvents:UIControlEventValueChanged];
-    /**
-     *  第一次主动刷新
-     */
-    [self refreshStateChange:refreshControl];
+    loadMoreBtn.backgroundColor = [UIColor redColor];
+    
+    [loadMoreBtn setTitle:@"加载更多" forState:UIControlStateNormal];
+    
+    [loadMoreBtn addTarget:self action:@selector(loadMore) forControlEvents:UIControlEventTouchDown];
+    
+    
+    self.tableView.tableFooterView = loadMoreBtn;
 }
 
-/**
- *  当监测到下拉刷新变化时,重新发送请求
- *
- */
-- (void)refreshStateChange:(UIRefreshControl*)refreshControl
+- (void)loadMore
+{
+#warning 要去看下加载更多发送的是什么指令,然后进行拼接
+    [self sendRequestWith:GP_NEWS_NEW andParameters:@{@"pageSize":@20,@"newsType":@11} andRequestType:RequestTypeNew];
+}
+
+- (void)setUpRefreshLabel
 {
     
-    AFHTTPRequestOperationManager * manager = [AFHTTPRequestOperationManager manager];
-
-    [manager GET:GP_NEWS_NEW parameters:@{@"pageSize":@20,@"newsType":@11} success:^(AFHTTPRequestOperation *operation, id responseObject) {
-        
-        self.news = [GPNews objectWithKeyValues:responseObject];
-        
-        [self.tableView reloadData];
-        
-        [refreshControl endRefreshing];
-        
-    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
-        
-        [refreshControl endRefreshing];
-        [MBProgressHUD showError:@"没有网络"];
-    }];
+    UILabel * refreshLabel = [[UILabel alloc]initWithFrame:CGRectMake(0, -100, GP_SCREEN_W, 44)];
     
-    [manager GET:GP_NEWS_SCROLLVIEW parameters:@{@"newsType":@"11"} success:^(AFHTTPRequestOperation *operation, id responseObject) {
-        
-        GPNewsHeaderView * newsHeaderView = [GPNewsHeaderView newsHeaderView];
-        
-        self.news = [GPNews objectWithKeyValues:responseObject];
-        
-        newsHeaderView.news = self.news;
-        
-        self.tableView.tableHeaderView = newsHeaderView;
-
-    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
-        
-    }];
+    refreshLabel.backgroundColor = [UIColor redColor];
     
+    refreshLabel.text = @"下拉刷新";
+    
+    refreshLabel.textAlignment = NSTextAlignmentCenter;
+    
+    [self.view addSubview:refreshLabel];
+   
+    self.refreshLabel = refreshLabel;
+
 }
+
+- (void)refresh
+{
+    [self sendRequestWith:GP_NEWS_NEW andParameters:@{@"pageSize":@20,@"newsType":@11} andRequestType:RequestTypeNew];
+    
+    
+    
+    [self sendRequestWith:GP_NEWS_SCROLLVIEW andParameters:@{@"newsType":@"11"} andRequestType:RequestTypeScrollView];
+
+}
+
 
 /**
  *  发送网络请求,判断请求类型
@@ -142,6 +146,7 @@ typedef enum
                  */
             case RequestTypeNew:
                 self.news = [GPNews objectWithKeyValues:responseObject];
+                
                 [self.tableView reloadData];
                 
                 break;
@@ -180,6 +185,8 @@ typedef enum
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
+    self.tableView.tableFooterView.hidden = self.news.RESULT.count == 0;
+    
     return self.news.RESULT.count;
 }
 
@@ -220,10 +227,45 @@ typedef enum
     
     newDetailController.title = @"最新";
     
-    
     [self.navigationController showViewController:newDetailController sender:nil];
+}
+/**
+ *  scrollView的代理方法
+ *
+ *  @param scrollView <#scrollView description#>
+ */
+
+- (void)scrollViewDidEndDragging:(UIScrollView *)scrollView willDecelerate:(BOOL)decelerate
+{
+    if(self.isRefresh)
+    {
+        [self refresh];
+    }
     
 }
+
+
+
+- (void)scrollViewDidScroll:(UIScrollView *)scrollView
+{
+    CGPoint point = scrollView.contentOffset;
+    
+    if(point.y*(-1)>150)
+    {
+        self.refresh = YES;
+        self.refreshLabel.text = @"松开刷新";
+    }
+    
+    else if(point.y*(-1)<150)
+    {
+        self.refresh = NO;
+        self.refreshLabel.text = @"下拉刷新";
+        
+    }
+}
+
+
+
 
 
 

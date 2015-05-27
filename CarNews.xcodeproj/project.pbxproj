@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		576FF15C1B15789700DF5541 /* GPRefreshView.m in Sources */ = {isa = PBXBuildFile; fileRef = 576FF15B1B15789700DF5541 /* GPRefreshView.m */; };
 		5786A60C1B1323B10016C30F /* GPMyFavoController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5786A60A1B1323B10016C30F /* GPMyFavoController.m */; };
 		5786A60D1B1323B10016C30F /* GPMyFavoController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5786A60B1B1323B10016C30F /* GPMyFavoController.xib */; };
 		5786A6161B1337E30016C30F /* GPSwitchCityController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5786A6141B1337E30016C30F /* GPSwitchCityController.m */; };
@@ -46,6 +47,9 @@
 		578DC9391B145E840060D4CF /* GPNewDetail.m in Sources */ = {isa = PBXBuildFile; fileRef = 578DC9381B145E840060D4CF /* GPNewDetail.m */; };
 		578DC93C1B145F0F0060D4CF /* GPRESULT.m in Sources */ = {isa = PBXBuildFile; fileRef = 578DC93B1B145F0F0060D4CF /* GPRESULT.m */; };
 		578DC93F1B1460250060D4CF /* GPSub_page.m in Sources */ = {isa = PBXBuildFile; fileRef = 578DC93E1B1460250060D4CF /* GPSub_page.m */; };
+		57954D711B14CA3B008A3531 /* GPDetailFooterView.m in Sources */ = {isa = PBXBuildFile; fileRef = 57954D701B14CA3B008A3531 /* GPDetailFooterView.m */; };
+		57954D731B14D21C008A3531 /* cityList.plist in Resources */ = {isa = PBXBuildFile; fileRef = 57954D721B14D21C008A3531 /* cityList.plist */; };
+		57954D761B14D4C5008A3531 /* GPCity.m in Sources */ = {isa = PBXBuildFile; fileRef = 57954D751B14D4C5008A3531 /* GPCity.m */; };
 		57A0802D1B12A7E7006DE5AB /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 57A0802C1B12A7E7006DE5AB /* main.m */; };
 		57A080301B12A7E7006DE5AB /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 57A0802F1B12A7E7006DE5AB /* AppDelegate.m */; };
 		57A080321B12A7E7006DE5AB /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 57A080311B12A7E7006DE5AB /* Images.xcassets */; };
@@ -95,6 +99,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		576FF15A1B15789700DF5541 /* GPRefreshView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GPRefreshView.h; sourceTree = "<group>"; };
+		576FF15B1B15789700DF5541 /* GPRefreshView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GPRefreshView.m; sourceTree = "<group>"; };
 		5786A6091B1323B10016C30F /* GPMyFavoController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GPMyFavoController.h; sourceTree = "<group>"; };
 		5786A60A1B1323B10016C30F /* GPMyFavoController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GPMyFavoController.m; sourceTree = "<group>"; };
 		5786A60B1B1323B10016C30F /* GPMyFavoController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = GPMyFavoController.xib; sourceTree = "<group>"; };
@@ -172,6 +178,11 @@
 		578DC93B1B145F0F0060D4CF /* GPRESULT.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GPRESULT.m; sourceTree = "<group>"; };
 		578DC93D1B1460250060D4CF /* GPSub_page.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GPSub_page.h; sourceTree = "<group>"; };
 		578DC93E1B1460250060D4CF /* GPSub_page.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GPSub_page.m; sourceTree = "<group>"; };
+		57954D6F1B14CA3B008A3531 /* GPDetailFooterView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GPDetailFooterView.h; sourceTree = "<group>"; };
+		57954D701B14CA3B008A3531 /* GPDetailFooterView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GPDetailFooterView.m; sourceTree = "<group>"; };
+		57954D721B14D21C008A3531 /* cityList.plist */ = {isa = PBXFileReference; lastKnownFileType = file.bplist; path = cityList.plist; sourceTree = "<group>"; };
+		57954D741B14D4C5008A3531 /* GPCity.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GPCity.h; sourceTree = "<group>"; };
+		57954D751B14D4C5008A3531 /* GPCity.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GPCity.m; sourceTree = "<group>"; };
 		57A080271B12A7E7006DE5AB /* CarNews.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CarNews.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		57A0802B1B12A7E7006DE5AB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		57A0802C1B12A7E7006DE5AB /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -299,6 +310,10 @@
 				5786A6831B134E6D0016C30F /* GPNewsCell.xib */,
 				57C7B3A61B1400D800A74EA4 /* GPNewsHeaderView.h */,
 				57C7B3A71B1400D800A74EA4 /* GPNewsHeaderView.m */,
+				57954D6F1B14CA3B008A3531 /* GPDetailFooterView.h */,
+				57954D701B14CA3B008A3531 /* GPDetailFooterView.m */,
+				576FF15A1B15789700DF5541 /* GPRefreshView.h */,
+				576FF15B1B15789700DF5541 /* GPRefreshView.m */,
 			);
 			name = Views;
 			sourceTree = "<group>";
@@ -440,6 +455,7 @@
 				5786A61F1B1343600016C30F /* NSDictionary+EXT */,
 				5786A61A1B1342D60016C30F /* city.json */,
 				57A0802B1B12A7E7006DE5AB /* Info.plist */,
+				57954D721B14D21C008A3531 /* cityList.plist */,
 				57A0802C1B12A7E7006DE5AB /* main.m */,
 				57A080691B12AA53006DE5AB /* GPCarNewsPch.pch */,
 			);
@@ -567,6 +583,8 @@
 				57A080741B12B7E4006DE5AB /* GPSettingGroup.m */,
 				57A080761B12BEA3006DE5AB /* GPArrowItem.h */,
 				57A080771B12BEA3006DE5AB /* GPArrowItem.m */,
+				57954D741B14D4C5008A3531 /* GPCity.h */,
+				57954D751B14D4C5008A3531 /* GPCity.m */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -736,6 +754,7 @@
 				5786A6851B134E6D0016C30F /* GPNewsCell.xib in Resources */,
 				57A080321B12A7E7006DE5AB /* Images.xcassets in Resources */,
 				57A080851B12CA4D006DE5AB /* GPSpaceHeaderView.xib in Resources */,
+				57954D731B14D21C008A3531 /* cityList.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -754,7 +773,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				5786A6751B1348520016C30F /* UIProgressView+AFNetworking.m in Sources */,
+				57954D711B14CA3B008A3531 /* GPDetailFooterView.m in Sources */,
 				57A0805F1B12A88B006DE5AB /* GPPreferentialViewController.m in Sources */,
+				576FF15C1B15789700DF5541 /* GPRefreshView.m in Sources */,
 				5786A6761B1348520016C30F /* UIRefreshControl+AFNetworking.m in Sources */,
 				57A0805C1B12A88B006DE5AB /* GPForumViewController.m in Sources */,
 				57A080721B12B0A0006DE5AB /* GPSettingItem.m in Sources */,
@@ -800,6 +821,7 @@
 				5786A6231B1343600016C30F /* NSDictionary+Ext.m in Sources */,
 				57C7B3A21B13FEFB00A74EA4 /* UIView+SDExtension.m in Sources */,
 				57A0802D1B12A7E7006DE5AB /* main.m in Sources */,
+				57954D761B14D4C5008A3531 /* GPCity.m in Sources */,
 				57A080751B12B7E4006DE5AB /* GPSettingGroup.m in Sources */,
 				57C7B3A11B13FEFB00A74EA4 /* SDCycleScrollView.m in Sources */,
 				5786A6771B1348520016C30F /* UIWebView+AFNetworking.m in Sources */,
