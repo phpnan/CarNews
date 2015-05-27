@@ -12,7 +12,7 @@
 #import "GPSettingCell.h"
 //#import "GPMyFavoController.h"
 #import "GPArrowItem.h"
-//#import "GPSwitchCityController.h"
+#import "GPSwitchCityController.h"
 @interface GPBaseSettingController ()
 
 @end
@@ -114,8 +114,24 @@
         if(arrowItem.vcTargetClass)
         {
             UIViewController * controller = [[arrowItem.vcTargetClass alloc]init];
+            if([controller isKindOfClass:[GPSwitchCityController class]])
+            {
+                   //GPLog(@"%s%p",__func__,controller);
+                GPSwitchCityController * switchCityController = (GPSwitchCityController*)controller;
+               
+                __block typeof (arrowItem)substitute = arrowItem;
+//                GPLog(@"%p",arrowItem);
+//                GPLog(@"%p",substitute);
+                [arrowItem setArrowOption:^(NSString *cityName) {
+                    substitute.detail = cityName;
+                    [self.tableView reloadRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationAutomatic];
+                }];
+                
+                switchCityController.arrowItem = arrowItem;
+                
+            }
             
-
+        
             
             controller.title = arrowItem.title;
 

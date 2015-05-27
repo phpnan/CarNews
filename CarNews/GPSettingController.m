@@ -16,7 +16,7 @@
 /**
  *  用来保存这个全局的切换城市的item
  */
-@property (nonatomic,strong)GPSettingItem * switchCity;
+//@property (nonatomic,strong)GPSettingItem * switchCity;
 @end
 
 @implementation GPSettingController
@@ -62,6 +62,9 @@
     
     [GPArrowItem settingItemWithIcon:nil andTitle:@"切换城市" anddetailTitle:@"北京" andVcTargetClass:[GPSwitchCityController class]];
     
+    /**
+     *  检查新版本的设置
+     */
     
     GPSettingItem * checkUpdate = [GPArrowItem settingItemWithIcon:nil andTitle:@"检查新版本"  anddetailTitle:@"当前版本Beta4.3.2" andVcTargetClass:nil];
     
@@ -106,41 +109,7 @@
     return 0;
 }
 
-- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    [super tableView:tableView didSelectRowAtIndexPath:indexPath];
-    GPSettingGroup * group = self.data[indexPath.section];
-    GPSettingItem * item = group.settingItem[indexPath.row];
-    if([item isKindOfClass:[GPArrowItem class]])
-    {
-        GPArrowItem * arrowItem = (GPArrowItem*)item;
-    
-        if(arrowItem.vcTargetClass)
-        {
-            UIViewController * controller = [[arrowItem.vcTargetClass alloc]init];
-            if([controller isKindOfClass:[GPSwitchCityController class]])
-            {
-                GPSwitchCityController * switchController = (GPSwitchCityController*)controller;
-                
-                switchController.arrowItem = arrowItem;
-                
-                if(arrowItem.arrowOption)
-                {
-                    __unsafe_unretained typeof(arrowItem) substitute = arrowItem;
-                    [arrowItem setArrowOption:^(NSString *cityName) {
-                        
-                        substitute.detail = cityName;
-                        /**
-                         *  刷新该行数据
-                         */
-                        [self.tableView reloadRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationLeft];
-                    }];
-                }
-            }
-        }
-    }
-    
-}
+
 
 
 @end
