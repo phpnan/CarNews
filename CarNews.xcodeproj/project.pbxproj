@@ -8,11 +8,12 @@
 
 /* Begin PBXBuildFile section */
 		576FF15C1B15789700DF5541 /* GPRefreshView.m in Sources */ = {isa = PBXBuildFile; fileRef = 576FF15B1B15789700DF5541 /* GPRefreshView.m */; };
+		576FF1601B15A67300DF5541 /* GPSearchController.m in Sources */ = {isa = PBXBuildFile; fileRef = 576FF15E1B15A67300DF5541 /* GPSearchController.m */; };
+		576FF1611B15A67300DF5541 /* GPSearchController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 576FF15F1B15A67300DF5541 /* GPSearchController.xib */; };
 		5786A60C1B1323B10016C30F /* GPMyFavoController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5786A60A1B1323B10016C30F /* GPMyFavoController.m */; };
 		5786A60D1B1323B10016C30F /* GPMyFavoController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5786A60B1B1323B10016C30F /* GPMyFavoController.xib */; };
 		5786A6161B1337E30016C30F /* GPSwitchCityController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5786A6141B1337E30016C30F /* GPSwitchCityController.m */; };
 		5786A6171B1337E30016C30F /* GPSwitchCityController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5786A6151B1337E30016C30F /* GPSwitchCityController.xib */; };
-		5786A61B1B1342D60016C30F /* city.json in Resources */ = {isa = PBXBuildFile; fileRef = 5786A61A1B1342D60016C30F /* city.json */; };
 		5786A6221B1343600016C30F /* NSArray+Ext.m in Sources */ = {isa = PBXBuildFile; fileRef = 5786A61E1B1343600016C30F /* NSArray+Ext.m */; };
 		5786A6231B1343600016C30F /* NSDictionary+Ext.m in Sources */ = {isa = PBXBuildFile; fileRef = 5786A6211B1343600016C30F /* NSDictionary+Ext.m */; };
 		5786A6391B1348100016C30F /* MJConst.m in Sources */ = {isa = PBXBuildFile; fileRef = 5786A6291B1348100016C30F /* MJConst.m */; };
@@ -101,13 +102,15 @@
 /* Begin PBXFileReference section */
 		576FF15A1B15789700DF5541 /* GPRefreshView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GPRefreshView.h; sourceTree = "<group>"; };
 		576FF15B1B15789700DF5541 /* GPRefreshView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GPRefreshView.m; sourceTree = "<group>"; };
+		576FF15D1B15A67300DF5541 /* GPSearchController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GPSearchController.h; sourceTree = "<group>"; };
+		576FF15E1B15A67300DF5541 /* GPSearchController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GPSearchController.m; sourceTree = "<group>"; };
+		576FF15F1B15A67300DF5541 /* GPSearchController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = GPSearchController.xib; sourceTree = "<group>"; };
 		5786A6091B1323B10016C30F /* GPMyFavoController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GPMyFavoController.h; sourceTree = "<group>"; };
 		5786A60A1B1323B10016C30F /* GPMyFavoController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GPMyFavoController.m; sourceTree = "<group>"; };
 		5786A60B1B1323B10016C30F /* GPMyFavoController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = GPMyFavoController.xib; sourceTree = "<group>"; };
 		5786A6131B1337E30016C30F /* GPSwitchCityController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GPSwitchCityController.h; sourceTree = "<group>"; };
 		5786A6141B1337E30016C30F /* GPSwitchCityController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GPSwitchCityController.m; sourceTree = "<group>"; };
 		5786A6151B1337E30016C30F /* GPSwitchCityController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = GPSwitchCityController.xib; sourceTree = "<group>"; };
-		5786A61A1B1342D60016C30F /* city.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = city.json; sourceTree = "<group>"; };
 		5786A61D1B1343600016C30F /* NSArray+Ext.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSArray+Ext.h"; sourceTree = "<group>"; };
 		5786A61E1B1343600016C30F /* NSArray+Ext.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSArray+Ext.m"; sourceTree = "<group>"; };
 		5786A6201B1343600016C30F /* NSDictionary+Ext.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDictionary+Ext.h"; sourceTree = "<group>"; };
@@ -298,6 +301,9 @@
 				57A080531B12A88B006DE5AB /* GPNewsViewController.m */,
 				57C7B3A91B141B5700A74EA4 /* GPNewDetailController.h */,
 				57C7B3AA1B141B5700A74EA4 /* GPNewDetailController.m */,
+				576FF15D1B15A67300DF5541 /* GPSearchController.h */,
+				576FF15E1B15A67300DF5541 /* GPSearchController.m */,
+				576FF15F1B15A67300DF5541 /* GPSearchController.xib */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -453,7 +459,6 @@
 			children = (
 				5786A61C1B1343600016C30F /* NSArray+EXT */,
 				5786A61F1B1343600016C30F /* NSDictionary+EXT */,
-				5786A61A1B1342D60016C30F /* city.json */,
 				57A0802B1B12A7E7006DE5AB /* Info.plist */,
 				57954D721B14D21C008A3531 /* cityList.plist */,
 				57A0802C1B12A7E7006DE5AB /* main.m */,
@@ -747,13 +752,13 @@
 			files = (
 				5786A6171B1337E30016C30F /* GPSwitchCityController.xib in Resources */,
 				5786A60D1B1323B10016C30F /* GPMyFavoController.xib in Resources */,
-				5786A61B1B1342D60016C30F /* city.json in Resources */,
 				57A080351B12A7E7006DE5AB /* LaunchScreen.xib in Resources */,
 				57A080971B12F15B006DE5AB /* GPLoginController.xib in Resources */,
 				57A080911B12E6ED006DE5AB /* MBProgressHUD.bundle in Resources */,
 				5786A6851B134E6D0016C30F /* GPNewsCell.xib in Resources */,
 				57A080321B12A7E7006DE5AB /* Images.xcassets in Resources */,
 				57A080851B12CA4D006DE5AB /* GPSpaceHeaderView.xib in Resources */,
+				576FF1611B15A67300DF5541 /* GPSearchController.xib in Resources */,
 				57954D731B14D21C008A3531 /* cityList.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -776,6 +781,7 @@
 				57954D711B14CA3B008A3531 /* GPDetailFooterView.m in Sources */,
 				57A0805F1B12A88B006DE5AB /* GPPreferentialViewController.m in Sources */,
 				576FF15C1B15789700DF5541 /* GPRefreshView.m in Sources */,
+				576FF1601B15A67300DF5541 /* GPSearchController.m in Sources */,
 				5786A6761B1348520016C30F /* UIRefreshControl+AFNetworking.m in Sources */,
 				57A0805C1B12A88B006DE5AB /* GPForumViewController.m in Sources */,
 				57A080721B12B0A0006DE5AB /* GPSettingItem.m in Sources */,

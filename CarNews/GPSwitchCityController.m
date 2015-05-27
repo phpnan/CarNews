@@ -76,7 +76,7 @@
     {
       arrowItem.arrowOption([self.citiesArray[indexPath.row]name]);
     }
-    //self.arrowItem.arrowOption([self.citiesArray[indexPath.row]name]);
+   
     [self.navigationController popViewControllerAnimated:YES];
 }
 

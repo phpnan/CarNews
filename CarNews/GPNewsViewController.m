@@ -19,7 +19,7 @@
 #import "GPSub_page.h"
 #import "GPNewDetailController.h"
 #import "GPRefreshView.h"
-
+#import "GPSearchController.h"
 /**
  定义请求的种类,不同的请求将对应不同的请求完成后的操作
  */
@@ -246,9 +246,12 @@ typedef enum
 /**
  *  点击搜索按钮时要调用的方法
  */
+#warning 搜索框
 - (void)search
 {
-    NSLog(@"search");
+    GPSearchController * searchController = [[GPSearchController alloc]init];
+    [self presentViewController:searchController animated:YES completion:^{
+    }];
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
