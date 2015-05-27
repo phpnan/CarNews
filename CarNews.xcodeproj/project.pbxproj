@@ -10,6 +10,9 @@
 		576FF15C1B15789700DF5541 /* GPRefreshView.m in Sources */ = {isa = PBXBuildFile; fileRef = 576FF15B1B15789700DF5541 /* GPRefreshView.m */; };
 		576FF1601B15A67300DF5541 /* GPSearchController.m in Sources */ = {isa = PBXBuildFile; fileRef = 576FF15E1B15A67300DF5541 /* GPSearchController.m */; };
 		576FF1611B15A67300DF5541 /* GPSearchController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 576FF15F1B15A67300DF5541 /* GPSearchController.xib */; };
+		576FF1671B15C25F00DF5541 /* GPHotCar.m in Sources */ = {isa = PBXBuildFile; fileRef = 576FF1661B15C25F00DF5541 /* GPHotCar.m */; };
+		576FF16A1B15C3DF00DF5541 /* GPHotResult.m in Sources */ = {isa = PBXBuildFile; fileRef = 576FF1691B15C3DF00DF5541 /* GPHotResult.m */; };
+		576FF16D1B15C4AC00DF5541 /* GPCarDetail.m in Sources */ = {isa = PBXBuildFile; fileRef = 576FF16C1B15C4AC00DF5541 /* GPCarDetail.m */; };
 		5786A60C1B1323B10016C30F /* GPMyFavoController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5786A60A1B1323B10016C30F /* GPMyFavoController.m */; };
 		5786A60D1B1323B10016C30F /* GPMyFavoController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5786A60B1B1323B10016C30F /* GPMyFavoController.xib */; };
 		5786A6161B1337E30016C30F /* GPSwitchCityController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5786A6141B1337E30016C30F /* GPSwitchCityController.m */; };
@@ -105,6 +108,12 @@
 		576FF15D1B15A67300DF5541 /* GPSearchController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GPSearchController.h; sourceTree = "<group>"; };
 		576FF15E1B15A67300DF5541 /* GPSearchController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GPSearchController.m; sourceTree = "<group>"; };
 		576FF15F1B15A67300DF5541 /* GPSearchController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = GPSearchController.xib; sourceTree = "<group>"; };
+		576FF1651B15C25F00DF5541 /* GPHotCar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GPHotCar.h; sourceTree = "<group>"; };
+		576FF1661B15C25F00DF5541 /* GPHotCar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GPHotCar.m; sourceTree = "<group>"; };
+		576FF1681B15C3DF00DF5541 /* GPHotResult.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GPHotResult.h; sourceTree = "<group>"; };
+		576FF1691B15C3DF00DF5541 /* GPHotResult.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GPHotResult.m; sourceTree = "<group>"; };
+		576FF16B1B15C4AC00DF5541 /* GPCarDetail.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GPCarDetail.h; sourceTree = "<group>"; };
+		576FF16C1B15C4AC00DF5541 /* GPCarDetail.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GPCarDetail.m; sourceTree = "<group>"; };
 		5786A6091B1323B10016C30F /* GPMyFavoController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GPMyFavoController.h; sourceTree = "<group>"; };
 		5786A60A1B1323B10016C30F /* GPMyFavoController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GPMyFavoController.m; sourceTree = "<group>"; };
 		5786A60B1B1323B10016C30F /* GPMyFavoController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = GPMyFavoController.xib; sourceTree = "<group>"; };
@@ -276,6 +285,35 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		576FF1621B15C19400DF5541 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				57A080561B12A88B006DE5AB /* GPSelectCarViewController.h */,
+				57A080571B12A88B006DE5AB /* GPSelectCarViewController.m */,
+			);
+			name = Controllers;
+			sourceTree = "<group>";
+		};
+		576FF1631B15C1A900DF5541 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Views;
+			sourceTree = "<group>";
+		};
+		576FF1641B15C1B900DF5541 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				576FF1651B15C25F00DF5541 /* GPHotCar.h */,
+				576FF1661B15C25F00DF5541 /* GPHotCar.m */,
+				576FF1681B15C3DF00DF5541 /* GPHotResult.h */,
+				576FF1691B15C3DF00DF5541 /* GPHotResult.m */,
+				576FF16B1B15C4AC00DF5541 /* GPCarDetail.h */,
+				576FF16C1B15C4AC00DF5541 /* GPCarDetail.m */,
+			);
+			name = Models;
+			sourceTree = "<group>";
+		};
 		5786A61C1B1343600016C30F /* NSArray+EXT */ = {
 			isa = PBXGroup;
 			children = (
@@ -505,8 +543,9 @@
 		57A080641B12A932006DE5AB /* selectCar(找车) */ = {
 			isa = PBXGroup;
 			children = (
-				57A080561B12A88B006DE5AB /* GPSelectCarViewController.h */,
-				57A080571B12A88B006DE5AB /* GPSelectCarViewController.m */,
+				576FF1641B15C1B900DF5541 /* Models */,
+				576FF1631B15C1A900DF5541 /* Views */,
+				576FF1621B15C19400DF5541 /* Controllers */,
 			);
 			name = "selectCar(找车)";
 			sourceTree = "<group>";
@@ -789,11 +828,13 @@
 				5786A6721B1348520016C30F /* UIAlertView+AFNetworking.m in Sources */,
 				5786A6741B1348520016C30F /* UIImageView+AFNetworking.m in Sources */,
 				57C7B3A81B1400D800A74EA4 /* GPNewsHeaderView.m in Sources */,
+				576FF16A1B15C3DF00DF5541 /* GPHotResult.m in Sources */,
 				5786A65A1B1348290016C30F /* AFURLConnectionOperation.m in Sources */,
 				5786A63C1B1348100016C30F /* MJType.m in Sources */,
 				5786A65D1B1348290016C30F /* AFURLSessionManager.m in Sources */,
 				5786A6841B134E6D0016C30F /* GPNewsCell.m in Sources */,
 				5786A65B1B1348290016C30F /* AFURLRequestSerialization.m in Sources */,
+				576FF1671B15C25F00DF5541 /* GPHotCar.m in Sources */,
 				57C7B39C1B13FEFB00A74EA4 /* TAAbstractDotView.m in Sources */,
 				5786A6391B1348100016C30F /* MJConst.m in Sources */,
 				57A080831B12CA2E006DE5AB /* GPSpaceHeaderView.m in Sources */,
@@ -831,6 +872,7 @@
 				57A080751B12B7E4006DE5AB /* GPSettingGroup.m in Sources */,
 				57C7B3A11B13FEFB00A74EA4 /* SDCycleScrollView.m in Sources */,
 				5786A6771B1348520016C30F /* UIWebView+AFNetworking.m in Sources */,
+				576FF16D1B15C4AC00DF5541 /* GPCarDetail.m in Sources */,
 				57C7B39D1B13FEFB00A74EA4 /* TAAnimatedDotView.m in Sources */,
 				5786A6711B1348520016C30F /* UIActivityIndicatorView+AFNetworking.m in Sources */,
 				578DC93F1B1460250060D4CF /* GPSub_page.m in Sources */,

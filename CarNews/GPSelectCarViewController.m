@@ -7,32 +7,80 @@
 //
 
 #import "GPSelectCarViewController.h"
-
+#import "MJExtension.h"
+#import "AFNetworking.h"
+#import "GPCarDetail.h"
+#import "GPHotCar.h"
+#import "GPHotResult.h"
 @interface GPSelectCarViewController ()
-
+@property (nonatomic,strong)GPHotCar * hotCars;
 @end
 
 @implementation GPSelectCarViewController
+- (instancetype)init
+{
+    return [super initWithStyle:UITableViewStyleGrouped];
+}
+
+- (GPHotCar*)hotCars
+{
+    if(_hotCars == nil)
+    {
+        _hotCars = [[GPHotCar alloc]init];
+    }
+    return _hotCars;
+}
 
 - (void)viewDidLoad {
+    
     [super viewDidLoad];
-//    GPLog(@"%s",__func__);
-    // Do any additional setup after loading the view.
+    
+    [self setUpSegmentControl];
+    
+    [self sendRequest];
 }
 
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+- (void)setUpSegmentControl
+{
+    UISegmentedControl * segmentControl = [[UISegmentedControl alloc]initWithFrame:CGRectMake(0, 0, GP_SCREEN_W, 44)];
+    
+    segmentControl.backgroundColor = [UIColor redColor];
+    
+    self.tableView.tableHeaderView = segmentControl;
 }
 
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
+- (void)sendRequest
+{
+    AFHTTPRequestOperationManager * mgr = [AFHTTPRequestOperationManager manager];
+    [mgr GET:GP_HOTMODEL parameters:nil success:^(AFHTTPRequestOperation *operation, id responseObject) {
+        
+        self.hotCars = [GPHotCar objectWithKeyValues:responseObject];
+        
+#warning 处理整个模型,要给具体的section传递的是一个t的模型,t里面有若干数组
+        [self.tableView reloadData];
+        
+        GPLog(@"~~~");
+    
+    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+        
+    }];
 }
-*/
+- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
+{
+    return 1;
+}
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
+{
+    
+    return 0;
+}
+
+- (UITableViewCell*)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    UITableViewCell * cell = [[UITableViewCell alloc]init];
+    return cell;
+}
+
+
 
 @end

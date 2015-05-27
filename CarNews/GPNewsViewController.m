@@ -246,7 +246,6 @@ typedef enum
 /**
  *  点击搜索按钮时要调用的方法
  */
-#warning 搜索框
 - (void)search
 {
     GPSearchController * searchController = [[GPSearchController alloc]init];

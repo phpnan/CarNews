@@ -8,6 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface GPSelectCarViewController : UIViewController
+@interface GPSelectCarViewController : UITableViewController
 
 @end
