@@ -36,20 +36,27 @@ typedef enum
  */
 @property (nonatomic,strong)GPNews * news;
 
-/**
- *  这个是详细页面的模型
- */
-//@property (nonatomic,strong)GPNewDetail * newsDetail;
+@property (nonatomic,strong)GPNews * scrollViewNews;
+@property (nonatomic,strong)NSMutableArray * resultArray;
 
 @property (nonatomic,assign,getter=isRefresh)BOOL refresh;
 @property (nonatomic,weak)UILabel * refreshLabel;
 
 //@property (nonatomic,weak)GPRefreshView * refreshView;
+
+
 @end
 
 @implementation GPNewsViewController
 
-
+- (NSMutableArray *)resultArray
+{
+    if(_resultArray == nil)
+    {
+        _resultArray  = [[NSMutableArray alloc]init];
+    }
+    return _resultArray;
+}
 - (GPNews*)news
 {
     if(_news == nil)
@@ -57,6 +64,16 @@ typedef enum
         _news = [[GPNews alloc]init];
     }
     return _news;
+}
+
+- (GPNews*)scrollViewNews
+{
+    if(_scrollViewNews == nil)
+    {
+        _scrollViewNews = [[GPNews alloc]init];
+        
+    }
+    return _scrollViewNews;
 }
 
 - (void)viewDidLoad {
@@ -73,7 +90,9 @@ typedef enum
     [self refresh];
    
 }
-
+/**
+ *  添加加载更多按钮
+ */
 - (void)setUpLoadMore
 {
     UIButton * loadMoreBtn = [UIButton buttonWithType:UIButtonTypeCustom];
@@ -89,13 +108,24 @@ typedef enum
     
     self.tableView.tableFooterView = loadMoreBtn;
 }
-
+/**
+ *  加载更多的方法
+ */
 - (void)loadMore
 {
-#warning 要去看下加载更多发送的是什么指令,然后进行拼接
-    [self sendRequestWith:GP_NEWS_NEW andParameters:@{@"pageSize":@20,@"newsType":@11} andRequestType:RequestTypeNew];
+    NSString * lastId = [[self.resultArray lastObject]ID ];
+    
+    //[[self.news.RESULT lastObject]ID ];
+    
+    NSDictionary * params = @{@"pageSize":@20,@"newsType":@11,@"lastId":lastId};
+    
+    [self sendRequestWith:GP_NEWS_NEW andParameters:params andRequestType:RequestTypeNew];
+   
+    //http://mobile.auto.sohu.com/mcms/external/getNews.at?pageSize=20&newsType=11&lastId=53175708
 }
-
+/**
+ *  添加下拉刷新的label
+ */
 - (void)setUpRefreshLabel
 {
     
@@ -112,17 +142,17 @@ typedef enum
     self.refreshLabel = refreshLabel;
 
 }
-
+/**
+ *  下拉刷新的方式是重复请求第一页,所以由于此时发送请求得到数据就不应该加到数组里面,这里要做一个单独的请求(第一页的)
+ */
 - (void)refresh
 {
     [self sendRequestWith:GP_NEWS_NEW andParameters:@{@"pageSize":@20,@"newsType":@11} andRequestType:RequestTypeNew];
     
     
-    
     [self sendRequestWith:GP_NEWS_SCROLLVIEW andParameters:@{@"newsType":@"11"} andRequestType:RequestTypeScrollView];
 
 }
-
 
 /**
  *  发送网络请求,判断请求类型
@@ -145,7 +175,18 @@ typedef enum
                  *  读取的是首页新闻的模型数据
                  */
             case RequestTypeNew:
+                
                 self.news = [GPNews objectWithKeyValues:responseObject];
+                /**
+                 *  判断上啦加载更多的firstID和原来数组中的firstID是否相同,如果不相同,才添加
+                 */
+               if(![[[self.news.RESULT firstObject]ID] isEqualToString: [[self.resultArray firstObject]ID]])
+               {
+                   for(GPNew * mynew in self.news.RESULT)
+                   {
+                       [self.resultArray addObject:mynew];
+                   }
+               }
                 
                 [self.tableView reloadData];
                 
@@ -155,8 +196,9 @@ typedef enum
                 /**
                  *  首页滚动栏和首页新闻的模型一样,所以也这么读取
                  */
-                self.news = [GPNews objectWithKeyValues:responseObject];
-                newsHeaderView.news = self.news;
+                self.scrollViewNews = [GPNews objectWithKeyValues:responseObject];
+                
+                newsHeaderView.news = self.scrollViewNews;
                 
                 self.tableView.tableHeaderView = newsHeaderView;
                 
@@ -186,8 +228,8 @@ typedef enum
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
     self.tableView.tableFooterView.hidden = self.news.RESULT.count == 0;
-    
-    return self.news.RESULT.count;
+    NSLog(@"%zi",self.resultArray.count);
+    return self.resultArray.count;
 }
 
 
@@ -195,7 +237,8 @@ typedef enum
 {
     GPNewsCell * cell = [GPNewsCell newsCellWith:tableView];
  
-    GPNew * myNew = self.news.RESULT[indexPath.row];
+    GPNew * myNew = self.resultArray[indexPath.row];
+    //self.news.RESULT[indexPath.row];
     /**
      *  将取好的模型传递给定义好的cell对象
      */
@@ -217,7 +260,7 @@ typedef enum
 {
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
     
-    GPNew * myNew = self.news.RESULT[indexPath.row];
+    GPNew * myNew = self.resultArray[indexPath.row];
 
     GPNewDetailController * newDetailController = [[GPNewDetailController alloc]init];
     

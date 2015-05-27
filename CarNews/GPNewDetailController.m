@@ -52,15 +52,12 @@
     
     self.webView.delegate = self;
   
-//    UIView * bottomView = [[UIView alloc]initWithFrame:CGRectMake(0, GP_SCREEN_H-44-64, GP_SCREEN_W, 44)];
-//    
-//    bottomView.backgroundColor = [UIColor redColor];
     GPDetailFooterView * detailFooterView = [GPDetailFooterView detailFooterView];
     
     [self.view addSubview:detailFooterView];
     
-   
-    GPLog(@"%s",__func__);
+//   
+//    GPLog(@"%s",__func__);
 }
 /**
  *  刷新按钮
