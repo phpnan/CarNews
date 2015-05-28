@@ -50,6 +50,7 @@
     [mgr GET:GP_RECOMMENDTOPICS parameters:nil success:^(AFHTTPRequestOperation *operation, id responseObject) {
         
         self.recomend = [GPRecomend objectWithKeyValues:responseObject];
+        
         [self.tableView reloadData];
         
     } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
@@ -80,8 +81,7 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    [self.tableView deselectRowAtIndexPath:indexPath animated:YES];
-    /**
+       /**
      *  点击之后去链接相应的网址,传递相应的模型
      */
     GPForumDetailController * forumDetailController = [[GPForumDetailController alloc]init];
@@ -89,9 +89,10 @@
     forumDetailController.view.backgroundColor = [UIColor whiteColor];
     
     forumDetailController.recDetail = self.recomend.RESULT[indexPath.row];
-    
+  
     [self.navigationController showViewController:forumDetailController sender:nil];
-    
+    [self.tableView deselectRowAtIndexPath:indexPath animated:YES];
+
     //http://saa.auto.sohu.com/mobileapp/topic/folnote.do?topicId=48853608466941&bid=11588&page=1&pageSize=15
 }
 

@@ -9,5 +9,7 @@
 #import <UIKit/UIKit.h>
 @class GPRecDetail;
 @interface GPForumDetailController : UIViewController
+
 @property (nonatomic,strong)GPRecDetail * recDetail;
+
 @end
