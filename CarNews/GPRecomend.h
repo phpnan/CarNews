@@ -1,5 +1,5 @@
 //
-//  GPHotCar.h
+//  GPRecomend.h
 //  CarNews
 //
 //  Created by chengxun on 15/5/27.
@@ -7,10 +7,9 @@
 //
 
 #import <Foundation/Foundation.h>
-@class GPHotResult;
-@interface GPHotCar : NSObject
 
+@interface GPRecomend : NSObject
+@property (nonatomic,strong)NSArray * RESULT;
 @property (nonatomic,copy) NSString * STATUS;
-@property (nonatomic,strong)GPHotResult * RESULT;
 
 @end

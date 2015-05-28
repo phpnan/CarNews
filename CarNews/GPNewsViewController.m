@@ -49,48 +49,30 @@ typedef enum
 @end
 
 @implementation GPNewsViewController
+#pragma mark lifeCycle
 
-- (NSMutableArray *)resultArray
+- (void)viewWillAppear:(BOOL)animated
 {
-    if(_resultArray == nil)
-    {
-        _resultArray  = [[NSMutableArray alloc]init];
-    }
-    return _resultArray;
-}
-- (GPNews*)news
-{
-    if(_news == nil)
-    {
-        _news = [[GPNews alloc]init];
-    }
-    return _news;
-}
-
-- (GPNews*)scrollViewNews
-{
-    if(_scrollViewNews == nil)
-    {
-        _scrollViewNews = [[GPNews alloc]init];
-        
-    }
-    return _scrollViewNews;
-}
-
-- (void)viewDidLoad {
-    [super viewDidLoad];
-    
-    self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc]initWithImage:[UIImage imageNamed:@"search"] style:UIBarButtonItemStylePlain target:self action:@selector(search)];
-   
-    self.view.backgroundColor = [UIColor whiteColor];
+    [super viewWillAppear:animated];
     
     [self setUpRefreshLabel];
     
     [self setUpLoadMore];
     
     [self refresh];
-   
+    
 }
+
+- (void)viewDidLoad {
+    
+    [super viewDidLoad];
+    
+    self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc]initWithImage:[UIImage imageNamed:@"search"] style:UIBarButtonItemStylePlain target:self action:@selector(search)];
+   
+    self.view.backgroundColor = [UIColor whiteColor];
+}
+
+#pragma mark event response
 /**
  *  添加加载更多按钮
  */
@@ -168,6 +150,7 @@ typedef enum
     AFHTTPRequestOperationManager * manager = [AFHTTPRequestOperationManager manager];
    
     [manager GET:urlStr parameters:params success:^(AFHTTPRequestOperation *operation, id responseObject) {
+        //GPLog(@"%@",responseObject);
         
         GPNewsHeaderView * newsHeaderView = [GPNewsHeaderView newsHeaderView];
         
@@ -243,15 +226,14 @@ typedef enum
 
 }
 
-/**
- *  点击搜索按钮时要调用的方法
- */
 - (void)search
 {
     GPSearchController * searchController = [[GPSearchController alloc]init];
     [self presentViewController:searchController animated:YES completion:^{
     }];
 }
+
+#pragma mark tableViewDelegate
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
@@ -305,7 +287,7 @@ typedef enum
  *
  *  @param scrollView <#scrollView description#>
  */
-
+#pragma mark scrollViewDelegate
 - (void)scrollViewDidEndDragging:(UIScrollView *)scrollView willDecelerate:(BOOL)decelerate
 {
     if(self.isRefresh)
@@ -335,6 +317,33 @@ typedef enum
     }
 }
 
+#pragma mark setter and getter
+- (NSMutableArray *)resultArray
+{
+    if(_resultArray == nil)
+    {
+        _resultArray  = [[NSMutableArray alloc]init];
+    }
+    return _resultArray;
+}
+- (GPNews*)news
+{
+    if(_news == nil)
+    {
+        _news = [[GPNews alloc]init];
+    }
+    return _news;
+}
+
+- (GPNews*)scrollViewNews
+{
+    if(_scrollViewNews == nil)
+    {
+        _scrollViewNews = [[GPNews alloc]init];
+        
+    }
+    return _scrollViewNews;
+}
 
 
 

@@ -59,7 +59,7 @@
      */
     GPSettingGroup * group = [[GPSettingGroup alloc]init];
     GPSettingItem * switchCity =
-    
+#warning 这里设置了的变化属性,所以应该是保存起来的,否则每次进来都会还原设置
     [GPArrowItem settingItemWithIcon:nil andTitle:@"切换城市" anddetailTitle:@"北京" andVcTargetClass:[GPSwitchCityController class]];
     
     /**

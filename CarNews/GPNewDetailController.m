@@ -30,10 +30,7 @@
     }
     return _newsDetail;
 }
-//- (void)loadView
-//{
-//    self.view = [[UIWebView alloc]init];
-//}
+
 - (void)viewDidLoad
 {
     
@@ -107,7 +104,7 @@
        
         [self.webView loadRequest:request];
         
-        GPLog(@"%s",__func__);
+        //GPLog(@"%s",__func__);
         
     } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
         

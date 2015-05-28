@@ -8,6 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface GPForumViewController : UIViewController
+@interface GPForumViewController : UITableViewController
 
 @end

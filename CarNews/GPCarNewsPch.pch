@@ -24,8 +24,13 @@
 #define GP_NEWS_SCROLLVIEW @"http://mobile.auto.sohu.com/mcms/external/getFocusNews.at"
 #define GP_NEWS_DETAIL @"http://mobile.auto.sohu.com/mcms/external/queryNewsDetail.at"
 /**
- *  热门车辆的接口
+ *  热门车辆的接口,不能访问ಥ_ಥ
  */
 #define GP_HOTMODEL @"http://db.auto.sohu.com/epicjson/hotmodel.sip"
+
+#define GP_RECOMMENDTOPICS @"http://saa.auto.sohu.com/mobileapp/club/queryRecommendTopics.do"
+#define GP_RECDETAIL @"http://saa.auto.sohu.com/mobileapp/topic/folnote.do"
+
+#define GP_CHIOCEINDEX @"http://saa.auto.sohu.com/mobileapp/club/choicesIndex.do"
 
 #endif
