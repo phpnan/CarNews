@@ -13,6 +13,7 @@
 #import "GPPreResult.h"
 #import "GPListDetail.h"
 #import "GPPreCell.h"
+#import "MJRefresh.h"
 @interface GPPreferentialViewController ()<UICollectionViewDelegateFlowLayout,UICollectionViewDataSource>
 @property (nonatomic,strong)GPPrefer * prefer;
 @property (nonatomic,weak)UICollectionView * collectionView;
@@ -52,6 +53,13 @@
     
     self.collectionView.dataSource = self;
     
+    /**
+     *  下拉刷新的MJRefresh
+     */
+    
+    [self.collectionView addLegendHeaderWithRefreshingBlock:^{
+        [self sendURLRequest];
+    }];
     
     [self.view addSubview:self.collectionView];
 }
@@ -66,6 +74,8 @@
     [mgr GET:GP_CHIOCEINDEX parameters:nil success:^(AFHTTPRequestOperation *operation, id responseObject) {
         
         self.prefer = [GPPrefer objectWithKeyValues:responseObject];
+        
+        [self.collectionView.header endRefreshing];
         
         [self.collectionView reloadData];
     } failure:^(AFHTTPRequestOperation *operation, NSError *error) {

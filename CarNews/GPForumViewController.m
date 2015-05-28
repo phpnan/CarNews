@@ -13,6 +13,7 @@
 #import "AFNetworking.h"
 #import "GPRecomendCell.h"
 #import "GPForumDetailController.h"
+#import "MJRefresh.h"
 @interface GPForumViewController ()
 @property (nonatomic,strong)GPRecomend * recomend;
 @end
@@ -32,6 +33,10 @@
 - (void)viewDidLoad {
     
     [super viewDidLoad];
+    __block typeof(self)substitute = self;
+    [self.tableView addLegendHeaderWithRefreshingBlock:^{
+        [substitute sendRequest];
+    }];
     
 }
 
@@ -52,6 +57,8 @@
         self.recomend = [GPRecomend objectWithKeyValues:responseObject];
         
         [self.tableView reloadData];
+        
+        [self.tableView.header endRefreshing];
         
     } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
        

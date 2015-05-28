@@ -20,6 +20,7 @@
 #import "GPNewDetailController.h"
 #import "GPRefreshView.h"
 #import "GPSearchController.h"
+#import "MJRefresh.h"
 /**
  定义请求的种类,不同的请求将对应不同的请求完成后的操作
  */
@@ -55,11 +56,11 @@ typedef enum
 {
     [super viewWillAppear:animated];
     
-    [self setUpRefreshLabel];
+//    [self setUpRefreshLabel];
+//    
+//    [self setUpLoadMore];
     
-    [self setUpLoadMore];
-    
-    [self refresh];
+   // [self refresh];
     
 }
 
@@ -70,27 +71,23 @@ typedef enum
     self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc]initWithImage:[UIImage imageNamed:@"search"] style:UIBarButtonItemStylePlain target:self action:@selector(search)];
    
     self.view.backgroundColor = [UIColor whiteColor];
+    /**
+     *  添加下拉刷新和上拉加载的控件
+     *
+     */
+    __block typeof(self)substitute = self;
+    
+    [self.tableView addLegendHeaderWithRefreshingBlock:^{
+        [substitute refresh];
+    }];
+    
+    [self.tableView addLegendFooterWithRefreshingBlock:^{
+        [substitute loadMore];
+    }];
 }
 
 #pragma mark event response
-/**
- *  添加加载更多按钮
- */
-- (void)setUpLoadMore
-{
-    UIButton * loadMoreBtn = [UIButton buttonWithType:UIButtonTypeCustom];
-    
-    loadMoreBtn.frame = CGRectMake(0, 0, GP_SCREEN_W, 44);
-    
-    loadMoreBtn.backgroundColor = [UIColor redColor];
-    
-    [loadMoreBtn setTitle:@"加载更多" forState:UIControlStateNormal];
-    
-    [loadMoreBtn addTarget:self action:@selector(loadMore) forControlEvents:UIControlEventTouchDown];
-    
-    
-    self.tableView.tableFooterView = loadMoreBtn;
-}
+
 /**
  *  加载更多的方法
  */
@@ -106,25 +103,7 @@ typedef enum
    
     //http://mobile.auto.sohu.com/mcms/external/getNews.at?pageSize=20&newsType=11&lastId=53175708
 }
-/**
- *  添加下拉刷新的label
- */
-- (void)setUpRefreshLabel
-{
-    
-    UILabel * refreshLabel = [[UILabel alloc]initWithFrame:CGRectMake(0, -100, GP_SCREEN_W, 44)];
-    
-    refreshLabel.backgroundColor = [UIColor redColor];
-    
-    refreshLabel.text = @"下拉刷新";
-    
-    refreshLabel.textAlignment = NSTextAlignmentCenter;
-    
-    [self.view addSubview:refreshLabel];
-   
-    self.refreshLabel = refreshLabel;
 
-}
 /**
  *  下拉刷新的方式是重复请求第一页,所以由于此时发送请求得到数据就不应该加到数组里面,这里要做一个单独的请求(第一页的)
  */
@@ -158,6 +137,17 @@ typedef enum
                 /**
                  *  读取的是首页新闻的模型数据
                  */
+            case RequestTypeScrollView:
+                /**
+                 *  首页滚动栏和首页新闻的模型一样,所以也这么读取
+                 */
+                self.scrollViewNews = [GPNews objectWithKeyValues:responseObject];
+                
+                newsHeaderView.news = self.scrollViewNews;
+                
+                self.tableView.tableHeaderView = newsHeaderView;
+                
+                
             case RequestTypeNew:
                 
                 self.news = [GPNews objectWithKeyValues:responseObject];
@@ -171,27 +161,18 @@ typedef enum
                        [self.resultArray addObject:mynew];
                    }
                
+                [self.tableView.footer endRefreshing];
                 
                 [self.tableView reloadData];
                 
                 break;
                 
-            case RequestTypeScrollView:
-                /**
-                 *  首页滚动栏和首页新闻的模型一样,所以也这么读取
-                 */
-                self.scrollViewNews = [GPNews objectWithKeyValues:responseObject];
-                
-                newsHeaderView.news = self.scrollViewNews;
-                
-                self.tableView.tableHeaderView = newsHeaderView;
-                
-                break;
+           
                 
             case RequestTypeRefresh:
                 
                 self.news = [GPNews objectWithKeyValues:responseObject];
-               
+                
                 if(![[[self.news.RESULT firstObject]ID] isEqualToString: [[self.resultArray firstObject]ID]])
                 {
                     NSMutableArray * tmp = [NSMutableArray array];
@@ -201,7 +182,7 @@ typedef enum
                     for(GPNew * myNew in self.news.RESULT)
                     {
                         [tmp addObject:myNew];
-                       
+                        
                     }
                     
                     NSRange range = {0,self.news.RESULT.count};
@@ -210,9 +191,12 @@ typedef enum
                     
                     [self.resultArray insertObjects:tmp atIndexes:indexSet];
                     
+                    
                     [self.tableView reloadData];
                 }
-
+                [self.tableView.header endRefreshing];
+                break;
+                
             default:
                 break;
         }
@@ -288,34 +272,34 @@ typedef enum
  *  @param scrollView <#scrollView description#>
  */
 #pragma mark scrollViewDelegate
-- (void)scrollViewDidEndDragging:(UIScrollView *)scrollView willDecelerate:(BOOL)decelerate
-{
-    if(self.isRefresh)
-    {
-        [self refresh];
-    }
-    
-}
-
-
-
-- (void)scrollViewDidScroll:(UIScrollView *)scrollView
-{
-    CGPoint point = scrollView.contentOffset;
-    
-    if(point.y*(-1)>150)
-    {
-        self.refresh = YES;
-        self.refreshLabel.text = @"松开刷新";
-    }
-    
-    else if(point.y*(-1)<150)
-    {
-        self.refresh = NO;
-        self.refreshLabel.text = @"下拉刷新";
-        
-    }
-}
+//- (void)scrollViewDidEndDragging:(UIScrollView *)scrollView willDecelerate:(BOOL)decelerate
+//{
+//    if(self.isRefresh)
+//    {
+//        [self refresh];
+//    }
+//    
+//}
+//
+//
+//
+//- (void)scrollViewDidScroll:(UIScrollView *)scrollView
+//{
+//    CGPoint point = scrollView.contentOffset;
+//    
+//    if(point.y*(-1)>150)
+//    {
+//        self.refresh = YES;
+//        self.refreshLabel.text = @"松开刷新";
+//    }
+//    
+//    else if(point.y*(-1)<150)
+//    {
+//        self.refresh = NO;
+//        self.refreshLabel.text = @"下拉刷新";
+//        
+//    }
+//}
 
 #pragma mark setter and getter
 - (NSMutableArray *)resultArray

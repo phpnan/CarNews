@@ -15,6 +15,7 @@
 #import "MJExtension.h"
 #import "MBProgressHUD+NJ.h"
 #import "GPDetailFooterView.h"
+#import "MJRefresh.h"
 @interface GPNewDetailController ()<UIWebViewDelegate>
 @property (nonatomic,strong)GPNewDetail * newsDetail;
 @property (nonatomic,weak)UIWebView * webView;
@@ -48,13 +49,14 @@
     self.webView = webView;
     
     self.webView.delegate = self;
+    
+    [self.webView.scrollView addLegendHeaderWithRefreshingBlock:^{
+        [self sendURLRequest];
+    }];
   
     GPDetailFooterView * detailFooterView = [GPDetailFooterView detailFooterView];
     
     [self.view addSubview:detailFooterView];
-    
-//   
-//    GPLog(@"%s",__func__);
 }
 /**
  *  刷新按钮
@@ -112,15 +114,12 @@
     }];
     
 }
-/**
- *  webView 的代理方法
- *
- *  @param webView <#webView description#>
- */
+#pragma mark webView的代理方法
 - (void)webViewDidFinishLoad:(UIWebView *)webView
 {
     [MBProgressHUD hideHUD];
     [MBProgressHUD showSuccess:@"加载完毕"];
+    [self.webView.scrollView.header endRefreshing];
 }
 - (void)webView:(UIWebView *)webView didFailLoadWithError:(NSError *)error
 {
