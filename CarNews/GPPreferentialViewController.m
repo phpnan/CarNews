@@ -14,6 +14,7 @@
 #import "GPListDetail.h"
 #import "GPPreCell.h"
 #import "MJRefresh.h"
+#import "GPPreDetailController.h"
 @interface GPPreferentialViewController ()<UICollectionViewDelegateFlowLayout,UICollectionViewDataSource>
 @property (nonatomic,strong)GPPrefer * prefer;
 @property (nonatomic,weak)UICollectionView * collectionView;
@@ -156,7 +157,13 @@
 #pragma mark collectionViewDelegate
 - (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath
 {
-    GPLog(@"%zi---%zi",indexPath.section,indexPath.item);
+    GPPreResult * preResult = self.prefer.RESULT[indexPath.section];
+    GPListDetail * listDetail = preResult.list[indexPath.item];
+    GPPreDetailController * detail = [[GPPreDetailController alloc]init];
+    detail.listDetail = listDetail;
+    
+    [self.navigationController showViewController:detail sender:nil];
+    
 }
 
 

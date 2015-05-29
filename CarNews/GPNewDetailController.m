@@ -118,7 +118,7 @@
 - (void)webViewDidFinishLoad:(UIWebView *)webView
 {
     [MBProgressHUD hideHUD];
-    [MBProgressHUD showSuccess:@"加载完毕"];
+//    [MBProgressHUD showSuccess:@"加载完毕"];
     [self.webView.scrollView.header endRefreshing];
 }
 - (void)webView:(UIWebView *)webView didFailLoadWithError:(NSError *)error

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="7706" systemVersion="14D136" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="7706" systemVersion="14D136" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
     </dependencies>
@@ -10,22 +10,27 @@
             <rect key="frame" x="0.0" y="1" width="375" height="200"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="mySpaceBkgnd" id="RuS-Kk-HN3">
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="mySpaceBkgnd" translatesAutoresizingMaskIntoConstraints="NO" id="RuS-Kk-HN3">
                     <rect key="frame" x="0.0" y="0.0" width="375" height="200"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                 </imageView>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="登录" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="sy4-9G-bZ5">
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="登录" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sy4-9G-bZ5">
                     <rect key="frame" x="166" y="134" width="42" height="21"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                     <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="21" id="MMx-aQ-zfk"/>
+                        <constraint firstAttribute="width" constant="40" id="xHd-zu-AIg"/>
+                    </constraints>
                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                     <nil key="highlightedColor"/>
                 </label>
-                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="HvE-xj-T8C">
+                <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HvE-xj-T8C">
                     <rect key="frame" x="143" y="48" width="89" height="68"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="80" id="G4M-ED-Hgm"/>
+                        <constraint firstAttribute="height" constant="80" id="Naz-G6-6Jm"/>
+                    </constraints>
                     <state key="normal" backgroundImage="loginPic">
                         <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                     </state>
@@ -34,6 +39,16 @@
                     </connections>
                 </button>
             </subviews>
+            <constraints>
+                <constraint firstItem="RuS-Kk-HN3" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="2Ah-sp-jhv"/>
+                <constraint firstAttribute="centerY" secondItem="HvE-xj-T8C" secondAttribute="centerY" id="AFE-ZY-qlc"/>
+                <constraint firstAttribute="centerX" secondItem="sy4-9G-bZ5" secondAttribute="centerX" id="DsP-dj-z6C"/>
+                <constraint firstAttribute="bottom" secondItem="RuS-Kk-HN3" secondAttribute="bottom" id="Glp-gb-H2M"/>
+                <constraint firstAttribute="centerX" secondItem="HvE-xj-T8C" secondAttribute="centerX" id="N6K-bk-5vH"/>
+                <constraint firstAttribute="trailing" secondItem="RuS-Kk-HN3" secondAttribute="trailing" id="QZ1-1h-C4I"/>
+                <constraint firstItem="sy4-9G-bZ5" firstAttribute="top" secondItem="HvE-xj-T8C" secondAttribute="bottom" constant="10" id="e3N-lt-vh0"/>
+                <constraint firstItem="RuS-Kk-HN3" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="qQg-a5-jUy"/>
+            </constraints>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <point key="canvasLocation" x="520.5" y="136"/>
         </view>

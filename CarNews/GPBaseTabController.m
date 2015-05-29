@@ -40,7 +40,7 @@
     /**
      *  添加论坛控制器
      */
-    [self addChildController:preferentialController withTitle:@"特惠" withImageName:@"tab_preferentialCar_normal" andSelectImage:@"tab_preferentialCar_highlighted"];
+    [self addChildController:preferentialController withTitle:@"故事" withImageName:@"tab_preferentialCar_normal" andSelectImage:@"tab_preferentialCar_highlighted"];
     UIViewController * forumController = [[GPForumViewController alloc]init];
     [self addChildController:forumController withTitle:@"论坛" withImageName:@"tab_forum_normal" andSelectImage:@"tab_forum_highlighted"];
     /**

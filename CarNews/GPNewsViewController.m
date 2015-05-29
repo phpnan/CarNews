@@ -56,12 +56,6 @@ typedef enum
 {
     [super viewWillAppear:animated];
     
-//    [self setUpRefreshLabel];
-//    
-//    [self setUpLoadMore];
-    
-   // [self refresh];
-    
 }
 
 - (void)viewDidLoad {
@@ -76,6 +70,8 @@ typedef enum
      *
      */
     __block typeof(self)substitute = self;
+    
+    [self refresh];
     
     [self.tableView addLegendHeaderWithRefreshingBlock:^{
         [substitute refresh];
@@ -222,7 +218,7 @@ typedef enum
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
     self.tableView.tableFooterView.hidden = self.news.RESULT.count == 0;
-    NSLog(@"%zi",self.resultArray.count);
+    GPLog(@"%zi",self.resultArray.count);
     return self.resultArray.count;
 }
 

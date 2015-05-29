@@ -11,7 +11,7 @@
 #import "MJExtension.h"
 #import "MBProgressHUD.h"
 #import "AFNetworking.h"
-
+#import "MJRefresh.h"
 @interface GPForumDetailController ()<UIWebViewDelegate>
 @property (nonatomic,weak)UIWebView * webView;
 @end
@@ -36,6 +36,7 @@
 - (void)loadwebView
 {
     //http://saa.auto.sohu.com/mobileapp/topic/folnote.do?topicId=48853608466941&bid=11588&page=1&pageSize=15
+    
     NSString * urlStr = [NSString stringWithFormat:@"%@?topicId=%@&bid=%zi&page=1&pageSize=15",GP_RECDETAIL,self.recDetail.topicId,self.recDetail.bid];
 
     NSURL * url = [NSURL URLWithString:urlStr];
@@ -48,6 +49,10 @@
     self.webView = webView;
     
     self.webView.delegate = self;
+    
+    [self.webView.scrollView addLegendHeaderWithRefreshingBlock:^{
+        [webView loadRequest:request];
+    }];
     
     [webView loadRequest:request];
 }
@@ -62,6 +67,7 @@
 - (void)webViewDidFinishLoad:(UIWebView *)webView
 {
     GPLog(@"%s",__func__);
+    [self.webView.scrollView.header endRefreshing];
 }
 
 - (void)webView:(UIWebView *)webView didFailLoadWithError:(NSError *)error

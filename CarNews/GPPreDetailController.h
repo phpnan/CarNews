@@ -7,7 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
-
+@class GPListDetail;
 @interface GPPreDetailController : UIViewController
-
+@property (nonatomic,strong)GPListDetail * listDetail;
 @end
