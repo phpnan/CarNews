@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="7706" systemVersion="14D136" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="72" id="KGk-i7-Jjw" customClass="GPVideoCell">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="100"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="BBc-OT-a2j">
+                        <rect key="frame" x="18" y="13" width="120" height="73.5"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="120" id="G3I-4i-6LE"/>
+                        </constraints>
+                    </imageView>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="55z-ag-BSW">
+                        <rect key="frame" x="155" y="13" width="200" height="40"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="40" id="AxB-Lk-99i"/>
+                            <constraint firstAttribute="width" constant="200" id="JBd-sx-reU"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="播放次数:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gGF-Ro-rlf">
+                        <rect key="frame" x="148" y="66" width="100" height="20"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="20" id="GlM-2b-GcI"/>
+                            <constraint firstAttribute="width" constant="100" id="kYJ-wY-gqb"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="时长:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IXA-un-S7M">
+                        <rect key="frame" x="282" y="65.5" width="80" height="21"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="80" id="5t8-Hh-k0G"/>
+                            <constraint firstAttribute="height" constant="21" id="pxp-Ex-K4b"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                </subviews>
+                <constraints>
+                    <constraint firstAttribute="bottomMargin" secondItem="BBc-OT-a2j" secondAttribute="bottom" constant="5" id="00Y-7I-aOi"/>
+                    <constraint firstItem="55z-ag-BSW" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" constant="5" id="5OK-vz-F1Z"/>
+                    <constraint firstItem="IXA-un-S7M" firstAttribute="leading" secondItem="gGF-Ro-rlf" secondAttribute="trailing" constant="34" id="D6P-jP-bQk"/>
+                    <constraint firstAttribute="bottomMargin" secondItem="IXA-un-S7M" secondAttribute="bottom" constant="5" id="IdT-w7-2Tx"/>
+                    <constraint firstItem="gGF-Ro-rlf" firstAttribute="leading" secondItem="BBc-OT-a2j" secondAttribute="trailing" constant="10" id="KSZ-ik-9af"/>
+                    <constraint firstAttribute="bottomMargin" secondItem="gGF-Ro-rlf" secondAttribute="bottom" constant="5" id="S22-cN-0ep"/>
+                    <constraint firstItem="BBc-OT-a2j" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" constant="5" id="TNt-mX-YPT"/>
+                    <constraint firstItem="55z-ag-BSW" firstAttribute="leading" secondItem="BBc-OT-a2j" secondAttribute="trailing" constant="17" id="ggZ-cd-T4R"/>
+                    <constraint firstItem="BBc-OT-a2j" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" constant="10" id="hP3-yO-f2s"/>
+                </constraints>
+            </tableViewCellContentView>
+            <connections>
+                <outlet property="length" destination="IXA-un-S7M" id="PS5-pa-M6F"/>
+                <outlet property="playCount" destination="gGF-Ro-rlf" id="VIz-Li-Ktz"/>
+                <outlet property="title" destination="55z-ag-BSW" id="ki3-Sm-BLg"/>
+                <outlet property="videoImage" destination="BBc-OT-a2j" id="zJw-kQ-MK2"/>
+            </connections>
+            <point key="canvasLocation" x="299.5" y="286"/>
+        </tableViewCell>
+    </objects>
+</document>

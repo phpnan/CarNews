@@ -12,4 +12,5 @@
 + (NSDictionary *)replacedKeyFromPropertyName
 {
     return @{@"desc" : @"description"};
-}@end
+}
+@end

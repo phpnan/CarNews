@@ -10,6 +10,12 @@
 		576FF15C1B15789700DF5541 /* GPRefreshView.m in Sources */ = {isa = PBXBuildFile; fileRef = 576FF15B1B15789700DF5541 /* GPRefreshView.m */; };
 		576FF1601B15A67300DF5541 /* GPSearchController.m in Sources */ = {isa = PBXBuildFile; fileRef = 576FF15E1B15A67300DF5541 /* GPSearchController.m */; };
 		576FF1611B15A67300DF5541 /* GPSearchController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 576FF15F1B15A67300DF5541 /* GPSearchController.xib */; };
+		578206471B1817A40064BDAA /* GPCarVideo.m in Sources */ = {isa = PBXBuildFile; fileRef = 578206461B1817A40064BDAA /* GPCarVideo.m */; };
+		5782064A1B1818090064BDAA /* GPVideoDetail.m in Sources */ = {isa = PBXBuildFile; fileRef = 578206491B1818090064BDAA /* GPVideoDetail.m */; };
+		5782064E1B181BCA0064BDAA /* GPVideoCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 5782064C1B181BCA0064BDAA /* GPVideoCell.m */; };
+		5782064F1B181BCA0064BDAA /* GPVideoCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5782064D1B181BCA0064BDAA /* GPVideoCell.xib */; };
+		578206511B183ECA0064BDAA /* MediaPlayer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 578206501B183ECA0064BDAA /* MediaPlayer.framework */; };
+		578206551B1841B10064BDAA /* GPMoviePlayerController.m in Sources */ = {isa = PBXBuildFile; fileRef = 578206541B1841B10064BDAA /* GPMoviePlayerController.m */; };
 		5786A60C1B1323B10016C30F /* GPMyFavoController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5786A60A1B1323B10016C30F /* GPMyFavoController.m */; };
 		5786A60D1B1323B10016C30F /* GPMyFavoController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5786A60B1B1323B10016C30F /* GPMyFavoController.xib */; };
 		5786A6161B1337E30016C30F /* GPSwitchCityController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5786A6141B1337E30016C30F /* GPSwitchCityController.m */; };
@@ -127,6 +133,16 @@
 		576FF15D1B15A67300DF5541 /* GPSearchController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GPSearchController.h; sourceTree = "<group>"; };
 		576FF15E1B15A67300DF5541 /* GPSearchController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GPSearchController.m; sourceTree = "<group>"; };
 		576FF15F1B15A67300DF5541 /* GPSearchController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = GPSearchController.xib; sourceTree = "<group>"; };
+		578206451B1817A40064BDAA /* GPCarVideo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GPCarVideo.h; sourceTree = "<group>"; };
+		578206461B1817A40064BDAA /* GPCarVideo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GPCarVideo.m; sourceTree = "<group>"; };
+		578206481B1818090064BDAA /* GPVideoDetail.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GPVideoDetail.h; sourceTree = "<group>"; };
+		578206491B1818090064BDAA /* GPVideoDetail.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GPVideoDetail.m; sourceTree = "<group>"; };
+		5782064B1B181BCA0064BDAA /* GPVideoCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GPVideoCell.h; sourceTree = "<group>"; };
+		5782064C1B181BCA0064BDAA /* GPVideoCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GPVideoCell.m; sourceTree = "<group>"; };
+		5782064D1B181BCA0064BDAA /* GPVideoCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = GPVideoCell.xib; sourceTree = "<group>"; };
+		578206501B183ECA0064BDAA /* MediaPlayer.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MediaPlayer.framework; path = System/Library/Frameworks/MediaPlayer.framework; sourceTree = SDKROOT; };
+		578206531B1841B10064BDAA /* GPMoviePlayerController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GPMoviePlayerController.h; sourceTree = "<group>"; };
+		578206541B1841B10064BDAA /* GPMoviePlayerController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GPMoviePlayerController.m; sourceTree = "<group>"; };
 		5786A6091B1323B10016C30F /* GPMyFavoController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GPMyFavoController.h; sourceTree = "<group>"; };
 		5786A60A1B1323B10016C30F /* GPMyFavoController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GPMyFavoController.m; sourceTree = "<group>"; };
 		5786A60B1B1323B10016C30F /* GPMyFavoController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = GPMyFavoController.xib; sourceTree = "<group>"; };
@@ -328,6 +344,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				578206511B183ECA0064BDAA /* MediaPlayer.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -346,6 +363,8 @@
 			children = (
 				57A080561B12A88B006DE5AB /* GPSelectCarViewController.h */,
 				57A080571B12A88B006DE5AB /* GPSelectCarViewController.m */,
+				578206531B1841B10064BDAA /* GPMoviePlayerController.h */,
+				578206541B1841B10064BDAA /* GPMoviePlayerController.m */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -353,6 +372,9 @@
 		576FF1631B15C1A900DF5541 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				5782064B1B181BCA0064BDAA /* GPVideoCell.h */,
+				5782064C1B181BCA0064BDAA /* GPVideoCell.m */,
+				5782064D1B181BCA0064BDAA /* GPVideoCell.xib */,
 			);
 			name = Views;
 			sourceTree = "<group>";
@@ -360,8 +382,20 @@
 		576FF1641B15C1B900DF5541 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				578206451B1817A40064BDAA /* GPCarVideo.h */,
+				578206461B1817A40064BDAA /* GPCarVideo.m */,
+				578206481B1818090064BDAA /* GPVideoDetail.h */,
+				578206491B1818090064BDAA /* GPVideoDetail.m */,
 			);
 			name = Models;
+			sourceTree = "<group>";
+		};
+		578206521B183F820064BDAA /* frameWorks */ = {
+			isa = PBXGroup;
+			children = (
+				578206501B183ECA0064BDAA /* MediaPlayer.framework */,
+			);
+			name = frameWorks;
 			sourceTree = "<group>";
 		};
 		5786A61C1B1343600016C30F /* NSArray+EXT */ = {
@@ -591,8 +625,8 @@
 				57A080681B12A980006DE5AB /* main(主要) */,
 				57A080671B12A96B006DE5AB /* mySpace(我的) */,
 				57A080661B12A95B006DE5AB /* forum(论坛) */,
-				57A080651B12A947006DE5AB /* preferential(特惠) */,
-				57A080641B12A932006DE5AB /* selectCar(找车) */,
+				57A080651B12A947006DE5AB /* preferential(故事) */,
+				57A080641B12A932006DE5AB /* selectCar(视频) */,
 				57A080631B12A910006DE5AB /* news(资讯) */,
 				57A080621B12A905006DE5AB /* Others */,
 				57A080581B12A88B006DE5AB /* UIImage+GPImageRendering.h */,
@@ -609,6 +643,7 @@
 		57A0802A1B12A7E7006DE5AB /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				578206521B183F820064BDAA /* frameWorks */,
 				5786A61C1B1343600016C30F /* NSArray+EXT */,
 				5786A61F1B1343600016C30F /* NSDictionary+EXT */,
 				57A0802B1B12A7E7006DE5AB /* Info.plist */,
@@ -654,24 +689,24 @@
 			name = "news(资讯)";
 			sourceTree = "<group>";
 		};
-		57A080641B12A932006DE5AB /* selectCar(找车) */ = {
+		57A080641B12A932006DE5AB /* selectCar(视频) */ = {
 			isa = PBXGroup;
 			children = (
 				576FF1641B15C1B900DF5541 /* Models */,
 				576FF1631B15C1A900DF5541 /* Views */,
 				576FF1621B15C19400DF5541 /* Controllers */,
 			);
-			name = "selectCar(找车)";
+			name = "selectCar(视频)";
 			sourceTree = "<group>";
 		};
-		57A080651B12A947006DE5AB /* preferential(特惠) */ = {
+		57A080651B12A947006DE5AB /* preferential(故事) */ = {
 			isa = PBXGroup;
 			children = (
 				578E43891B171107005F3106 /* Models */,
 				578E43881B171100005F3106 /* Views */,
 				578E43871B1710F8005F3106 /* Controllers */,
 			);
-			name = "preferential(特惠)";
+			name = "preferential(故事)";
 			sourceTree = "<group>";
 		};
 		57A080661B12A95B006DE5AB /* forum(论坛) */ = {
@@ -938,6 +973,7 @@
 				578E437D1B16A705005F3106 /* GPRecomendCell.xib in Resources */,
 				57A080911B12E6ED006DE5AB /* MBProgressHUD.bundle in Resources */,
 				5786A6851B134E6D0016C30F /* GPNewsCell.xib in Resources */,
+				5782064F1B181BCA0064BDAA /* GPVideoCell.xib in Resources */,
 				57A080321B12A7E7006DE5AB /* Images.xcassets in Resources */,
 				57A080851B12CA4D006DE5AB /* GPSpaceHeaderView.xib in Resources */,
 				576FF1611B15A67300DF5541 /* GPSearchController.xib in Resources */,
@@ -961,6 +997,7 @@
 			files = (
 				578E438F1B171235005F3106 /* GPPreResult.m in Sources */,
 				57C5CA951B161ED100D1757A /* GPRecDetail.m in Sources */,
+				5782064E1B181BCA0064BDAA /* GPVideoCell.m in Sources */,
 				5786A6751B1348520016C30F /* UIProgressView+AFNetworking.m in Sources */,
 				57954D711B14CA3B008A3531 /* GPDetailFooterView.m in Sources */,
 				57A0805F1B12A88B006DE5AB /* GPPreferentialViewController.m in Sources */,
@@ -987,6 +1024,7 @@
 				5786A6391B1348100016C30F /* MJConst.m in Sources */,
 				5799B7051B17631F00F4D2DC /* MJRefreshGifHeader.m in Sources */,
 				57A080831B12CA2E006DE5AB /* GPSpaceHeaderView.m in Sources */,
+				5782064A1B1818090064BDAA /* GPVideoDetail.m in Sources */,
 				5786A6731B1348520016C30F /* UIButton+AFNetworking.m in Sources */,
 				57A080781B12BEA3006DE5AB /* GPArrowItem.m in Sources */,
 				5799B7021B17631F00F4D2DC /* MJRefreshConst.m in Sources */,
@@ -1006,6 +1044,7 @@
 				57A080881B12D02D006DE5AB /* GPSettingController.m in Sources */,
 				578DC93C1B145F0F0060D4CF /* GPRESULT.m in Sources */,
 				57EDAEB11B16284B003E7190 /* TAAnimatedDotView.m in Sources */,
+				578206471B1817A40064BDAA /* GPCarVideo.m in Sources */,
 				57A080901B12E6ED006DE5AB /* MBProgressHUD+NJ.m in Sources */,
 				5786A6571B1348290016C30F /* AFHTTPSessionManager.m in Sources */,
 				57A080921B12E6ED006DE5AB /* MBProgressHUD.m in Sources */,
@@ -1047,6 +1086,7 @@
 				5799B7031B17631F00F4D2DC /* MJRefreshFooter.m in Sources */,
 				5786A6561B1348290016C30F /* AFHTTPRequestOperationManager.m in Sources */,
 				5786A60C1B1323B10016C30F /* GPMyFavoController.m in Sources */,
+				578206551B1841B10064BDAA /* GPMoviePlayerController.m in Sources */,
 				578DC9391B145E840060D4CF /* GPNewDetail.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -32,7 +32,7 @@
      添加找车控制器
      */
     UIViewController * selectCarController = [[GPSelectCarViewController alloc]init];
-    [self addChildController:selectCarController withTitle:@"找车" withImageName:@"tab_selectCar_normal" andSelectImage:@"tab_selectCar_highlighted"];
+    [self addChildController:selectCarController withTitle:@"视频" withImageName:@"tab_selectCar_normal" andSelectImage:@"tab_selectCar_highlighted"];
     /**
      添加特惠控制器
      */

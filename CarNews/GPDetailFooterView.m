@@ -60,7 +60,7 @@
    
 }
 
-#warning 写到这个按钮的方法停下来了啦♪(^∇^*)
+#warning 分享按钮
 
 - (void)shareBtnTouch:(UIButton*)shareBtn
 {

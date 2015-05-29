@@ -8,6 +8,11 @@
 #import "AFNetworking.h"
 #import "AppDelegate.h"
 #import "GPBaseTabController.h"
+
+/**
+ *  5568107167e58e87eb003f48 umeng的appKey
+ */
+
 @interface AppDelegate ()
 
 @end
@@ -15,7 +20,10 @@
 @implementation AppDelegate
 
 
+
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
+    
+    sleep(1);
     self.window = [[UIWindow alloc]initWithFrame:[UIScreen mainScreen].bounds];
     GPBaseTabController * baseTabController = [[GPBaseTabController alloc]init];
     self.window.rootViewController = baseTabController;

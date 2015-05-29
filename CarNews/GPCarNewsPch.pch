@@ -9,6 +9,8 @@
 #ifndef CarNews_GPCarNewsPch_pch
 #define CarNews_GPCarNewsPch_pch
 
+#import <MediaPlayer/MediaPlayer.h>
+
 #define GPLog(...) NSLog(__VA_ARGS__)
 /**
  *  导入一个UIImage的原画分类
@@ -16,7 +18,6 @@
 #import "UIImage+GPImageRendering.h"
 #define GP_SCREEN_W  [UIScreen mainScreen].bounds.size.width
 #define GP_SCREEN_H  [UIScreen mainScreen].bounds.size.height
-
 /**
  *  资讯的接口
  */
@@ -32,5 +33,11 @@
 #define GP_RECDETAIL @"http://saa.auto.sohu.com/mobileapp/topic/folnote.do"
 
 #define GP_CHIOCEINDEX @"http://saa.auto.sohu.com/mobileapp/club/choicesIndex.do"
+/**
+    参数设置 不能这么访问
+ 
+ *  ?topicId=0&startId=0&cate=1449&count=20&tagId=0&tord=up
+ */
+#define GP_CARVIDEO @"http://api.daogou.bjzzcb.com/v2/article/list"
 
 #endif
